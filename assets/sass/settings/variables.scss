@@ -1,0 +1,42 @@
+// Global colors
+
+$black: #000;
+$white: #fff;
+
+$red: #c8263e;
+$mandy: #d53e4f; //Button and menu
+$pumpkin: #e75632;
+$orange: #f99b4a;
+$yellow: #ffd676;
+$green: #5fb393;
+$lemon: #a5ca91;
+$blue: #1577b1;
+
+// Letter colors
+$jonquil: #e6f698;
+$tomato: #f46c43;
+$courious-blue: #3388bd;
+$moss-green: #abdda4;
+$mid-aqua: #67c1a4;
+
+
+//Fonts
+$h-font-family: 'Open Sans', sans-serif;
+$font-family: 'Roboto Mono', monospace;
+$font-size: 16px;
+$content-max-width: 1024px;
+
+//Distances
+$main-padding: 0 2.5rem;
+$items-section-separation: 3.5rem;
+
+
+//Breakpoints
+
+$default_width: 610px;
+$max_content_width: 1240px;
+$breakpoint_sm: 482px;
+$breakpoint_md: 592px;
+$breakpoint_lg: 652px;
+$breakpoint_xl: 822px;
+$breakpoint_xxl: 1024px;

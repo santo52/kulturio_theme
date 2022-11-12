@@ -1,0 +1,514 @@
+@charset "UTF-8";
+/**
+Theme Name: Kultur Theme
+Author: Haider Prieto y Santiago Ruiz
+Description: Kultur.io
+Requires at least: 5.3
+Tested up to: 6.0
+Requires PHP: 5.6
+Version: 1.7
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: kultur.io
+Tags: one-column, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready
+
+Kultur WordPress Theme, (C) 2020 WordPress.org
+Kultur is distributed under the terms of the GNU GPL.
+**/
+/**
+ * SETTINGS
+ * File-header..........The file header for the themes style.css file.
+ * Fonts................Any font files, if the project needs specific fonts.
+ * Global...............Project-specific, globally available variables.
+ *
+ * TOOLS
+ * Functions............Global functions.
+ * Mixins...............Global mixins.
+ *
+ * GENERIC
+ * Normalize.css........Normalise browser defaults.
+ * Breakpoints..........Mixins and variables for responsive styles
+ * Vertical-margins.....Vertical spacing for the main components.
+ * Reset................Reset specific elements to make them easier to style in other contexts.
+ * Clearings............Clearings for the main components.
+ *
+ * ELEMENTS
+ * Blockquote...........Default blockquote.
+ * Forms................Element-level form styling.
+ * Headings.............H1–H6
+ * Links................Default links.
+ * Lists................Default lists.
+ * Media................Images, Figure, Figcaption, Embed, iFrame, Objects, Video.
+ *
+ * BLOCKS
+ * Audio................Specific styles for the audio block.
+ * Button...............Specific styles for the button block.
+ * Code.................Specific styles for the code block.
+ * Columns..............Specific styles for the columns block.
+ * Cover................Specific styles for the cover block.
+ * File.................Specific styles for the file block.
+ * Gallery..............Specific styles for the gallery block.
+ * Group................Specific styles for the group block.
+ * Heading..............Specific styles for the heading block.
+ * Image................Specific styles for the image block.
+ * Latest comments......Specific styles for the latest comments block.
+ * Latest posts.........Specific styles for the latest posts block.
+ * Legacy...............Specific styles for the legacy gallery.
+ * List.................Specific styles for the list block.
+ * Media text...........Specific styles for the media and text block.
+ * Navigation...........Specific styles for the navigation block.
+ * Paragraph............Specific styles for the paragraph block.
+ * Pullquote............Specific styles for the pullquote block.
+ * Quote................Specific styles for the quote block.
+ * Search...............Specific styles for the search block.
+ * Separator............Specific styles for the separator block.
+ * Table................Specific styles for the table block.
+ * Verse................Specific styles for the verse block.
+ * Video................Specific styles for the video block.
+ * Utilities............Block alignments.
+ *
+ * COMPONENTS
+ * Header...............Header styles.
+ * Footer...............Footer styles.
+ * Comments.............Comment styles.
+ * Archives.............Archive styles.
+ * 404..................404 styles.
+ * Search...............Search styles.
+ * Navigation...........Navigation styles.
+ * Footer Navigation....Footer Navigation styles.
+ * Pagination...........Pagination styles.
+ * Single...............Single page and post styles.
+ * Posts and pages......Misc, sticky post styles.
+ * Entry................Entry, author biography.
+ * Widget...............Widget styles.
+ * Editor...............Editor styles.
+ *
+ * UTILITIES
+ * A11y.................Screen reader text, prefers reduced motion etc.
+ * Color Palette........Classes for the color palette colors.
+ * Editor Font Sizes....Editor Font Sizes.
+ * Measure..............The width of a line of text, in characters.
+ */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Roboto+Mono:wght@200;300;400&display=swap");
+/**
+ * Responsive Styles
+ */
+/**
+ * Required Variables
+ */
+@media only screen and (min-width: 652px) {
+  .to-laptop {
+    display: none !important;
+  }
+}
+
+.from-laptop {
+  display: none;
+}
+@media only screen and (min-width: 652px) {
+  .from-laptop {
+    display: initial !important;
+  }
+}
+
+@media only screen and (min-width: 822px) {
+  .to-desktop {
+    display: none !important;
+  }
+}
+
+.from-desktop {
+  display: none;
+}
+@media only screen and (min-width: 822px) {
+  .from-desktop {
+    display: initial !important;
+  }
+}
+
+/* Categories 01 to 03 are the basics. */
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+form,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+/**
+ * Apply generic border-box to all elements.
+ * See:
+ * https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+html {
+  /* Apply border-box across the entire page. */
+  box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+}
+
+/**
+ * Relax the definition a bit, to allow components to override it manually.
+ */
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 14px;
+  font-weight: normal;
+  text-align: left;
+  background-color: #000;
+}
+@media only screen and (min-width: 400px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Open Sans", sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  height: auto;
+  width: 100%;
+}
+
+main {
+  max-width: 500px;
+  margin: auto;
+  padding: 0 1rem;
+  overflow: hidden;
+}
+@media only screen and (min-width: 400px) {
+  main {
+    padding: 0 2.5rem;
+  }
+}
+@media only screen and (min-width: 652px) {
+  main {
+    max-width: 1024px;
+  }
+}
+
+.section-block {
+  padding-bottom: 2rem;
+  min-height: 600px;
+}
+
+h1.color-yellow,
+h1 .color-yellow,
+h2.color-yellow,
+h2 .color-yellow,
+h3.color-yellow,
+h3 .color-yellow,
+h4.color-yellow,
+h4 .color-yellow,
+h5.color-yellow,
+h5 .color-yellow,
+h6.color-yellow,
+h6 .color-yellow,
+p.color-yellow,
+p .color-yellow {
+  color: #e6f698;
+}
+
+.btn {
+  color: #fff;
+  border: none;
+  outline: 0;
+  padding: 0.7rem 3rem;
+  width: 100%;
+  font-weight: bold;
+  font-size: 1.3rem;
+  border-radius: 2rem;
+}
+.btn-red {
+  background-color: #d53e4f;
+}
+.btn-red:hover {
+  background-color: #67c1a4;
+  color: #000;
+}
+
+.modal--left {
+  display: flex;
+  height: 100%;
+  left: 100%;
+  position: fixed;
+  top: 0;
+  transition: left 0.3s ease-out;
+  width: 100%;
+  z-index: 10000;
+}
+.modal--left .modal-show {
+  left: 0;
+}
+.modal-background {
+  align-items: center;
+  background-color: #000;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  opacity: 0.8;
+  width: 40%;
+}
+.modal-background img {
+  width: 1rem;
+}
+.modal-content {
+  background-color: #d53e4f;
+  padding: 15px;
+  width: 60%;
+}
+.modal-header {
+  height: 40px;
+}
+
+.main-menu {
+  display: flex;
+  height: 100%;
+  left: 100%;
+  position: fixed;
+  top: 0;
+  transition: left 0.3s ease-out;
+  visibility: hidden;
+  width: 100%;
+  z-index: 10000;
+  max-width: 1024px;
+  margin: auto;
+}
+@media only screen and (min-width: 822px) {
+  .main-menu {
+    display: block;
+    height: 50px;
+    left: 0;
+    position: static;
+    top: 0;
+    visibility: visible;
+  }
+}
+.main-menu-show {
+  left: 0;
+  visibility: visible;
+}
+.main-menu-background {
+  align-items: center;
+  background-color: #000;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  opacity: 0.8;
+  width: 40%;
+}
+.main-menu-background img {
+  width: 1rem;
+}
+.main-menu-content {
+  background-color: #d53e4f;
+  padding: 15px;
+  width: 60%;
+}
+@media only screen and (min-width: 822px) {
+  .main-menu-content {
+    background-color: #000;
+    padding: 0;
+    width: 100%;
+  }
+}
+.main-menu-header {
+  height: 40px;
+}
+.main-menu .kulturai-main-menu {
+  color: #fff;
+  font-weight: 200;
+  padding-left: 1.5rem;
+}
+@media only screen and (min-width: 822px) {
+  .main-menu .kulturai-main-menu {
+    color: #000;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+  }
+}
+.main-menu .kulturai-main-menu ul {
+  list-style: none;
+}
+@media only screen and (min-width: 822px) {
+  .main-menu .kulturai-main-menu ul {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+.main-menu .kulturai-main-menu li {
+  align-items: center;
+  display: flex;
+}
+.main-menu .kulturai-main-menu a {
+  color: #fff;
+  padding: 0.6rem;
+  text-decoration: none;
+  width: 100%;
+}
+
+.kulturio-header {
+  background-color: transparent;
+  display: flex;
+  height: 50px;
+  justify-content: space-between;
+  padding: 0 10px;
+  position: relative;
+  width: 100%;
+}
+.kulturio-header .hamburguer-menu,
+.kulturio-header .logo {
+  height: 100%;
+  padding: 1rem;
+}
+.kulturio-header .hamburguer-menu img,
+.kulturio-header .logo img {
+  height: 100%;
+  width: auto;
+}
+.kulturio-header .hamburguer-menu {
+  cursor: pointer;
+  padding: 10px;
+}
+.kulturio-header .hamburguer-menu.fixed {
+  position: absolute;
+  right: 10px;
+  top: 0;
+}
+.kulturio-header .header-fixed {
+  background: #000;
+  height: 50px;
+  left: 0;
+  padding: 0 10px;
+  position: fixed;
+  top: -50px;
+  transition: top 0.5s;
+  width: 100%;
+  z-index: 999;
+}
+.kulturio-header .header-fixed > div {
+  display: flex;
+  max-width: 1024px;
+  margin: auto;
+  height: 100%;
+  justify-content: space-between;
+}
+.kulturio-header.scrolled .header-fixed {
+  top: 0;
+}
+
+.intro {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media only screen and (min-width: 652px) {
+  .intro {
+    margin-top: 2rem;
+    flex-direction: row;
+  }
+}
+.intro-info {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 50px);
+  justify-content: space-between;
+  padding-bottom: 2rem;
+}
+@media only screen and (min-width: 652px) {
+  .intro-info {
+    flex-basis: 50%;
+    justify-content: flex-start;
+  }
+  .intro-info button {
+    max-width: 18rem;
+  }
+}
+.intro-icon {
+  margin: 0 auto;
+  max-width: 500px;
+  width: 13rem;
+}
+@media only screen and (min-width: 652px) {
+  .intro-icon {
+    margin: 0;
+    width: 100%;
+  }
+}
+.intro-description {
+  line-height: 1.2;
+  text-align: center;
+  max-width: 24.3rem;
+}
+@media only screen and (min-width: 652px) {
+  .intro-description {
+    margin: 3rem 0;
+    text-align: left;
+  }
+}
+.intro-description-content {
+  font-weight: 200;
+  margin-top: 2rem;
+  display: inline-block;
+  padding: 0 2rem;
+  line-height: 1.4;
+}
+@media only screen and (min-width: 652px) {
+  .intro-description-content {
+    margin-top: 1rem;
+    padding: 0;
+  }
+}
+.intro-image {
+  width: 130%;
+  position: relative;
+  left: 50%;
+  margin-left: -65%;
+  max-width: 500px;
+  margin-top: 4rem;
+}
+@media only screen and (min-width: 652px) {
+  .intro-image {
+    flex-basis: 50%;
+    margin: 0;
+    position: static;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

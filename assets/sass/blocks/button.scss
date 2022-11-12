@@ -1,0 +1,17 @@
+.btn {
+    color: $white;
+    border: none;
+    outline: 0;
+    padding: 0.7rem 3rem;
+    width: 100%;
+    font-weight: bold;
+    font-size: 1.3rem;
+    border-radius: 2rem;
+    &-red {
+        background-color: $mandy;
+        &:hover {
+            background-color: $mid-aqua;
+            color: $black;
+        }
+    }
+}

@@ -1,0 +1,138 @@
+.modal {
+
+  $self: &;
+
+  &--left {
+    display: flex;
+    height: 100%;
+    left: 100%;
+    position: fixed;
+    top: 0;
+    transition: left .3s ease-out;
+    width: 100%;
+    z-index: 10000;
+
+    #{$self}-show {
+      left: 0;
+    }
+  }
+
+  &-background {
+    align-items: center;
+    background-color: $black;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    opacity: .8;
+    width: 40%;
+
+    img {
+      width: 1rem;
+    }
+  }
+
+  &-content {
+    background-color: $mandy;
+    padding: 15px;
+    width: 60%;
+  }
+
+  &-header {
+    height: 40px;
+  }
+}
+
+
+
+.main-menu {
+  display: flex;
+  height: 100%;
+  left: 100%;
+  position: fixed;
+  top: 0;
+  transition: left .3s ease-out;
+  visibility: hidden;
+  width: 100%;
+  z-index: 10000;
+  max-width: $content-max-width;
+  margin: auto;
+
+  @include media(desktop) {
+    display: block;
+    height: 50px;
+    left: 0;
+    position: static;
+    top: 0;
+    visibility: visible;
+  }
+
+
+  &-show {
+    left: 0;
+    visibility: visible;
+  }
+
+  &-background {
+    align-items: center;
+    background-color: $black;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    opacity: .8;
+    width: 40%;
+
+    img {
+      width: 1rem;
+    }
+  }
+
+  &-content {
+    background-color: $mandy;
+    padding: 15px;
+    width: 60%;
+
+    @include media(desktop) {
+      background-color: $black;
+      padding: 0;
+      width: 100%;
+    }
+  }
+
+  &-header {
+    height: 40px;
+  }
+
+  .kulturai-main-menu {
+
+    color: $white;
+    font-weight: 200;
+    padding-left: 1.5rem;
+
+    @include media(desktop) {
+      color: $black;
+      font-family: $h-font-family;
+      font-weight: 300;
+    }
+
+    ul {
+      list-style: none;
+
+      @include media(desktop) {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+
+    li {
+      align-items: center;
+      display: flex;
+    }
+
+    a {
+      color: $white;
+      padding: .6rem;
+      text-decoration: none;
+      width: 100%;
+    }
+  }
+}
