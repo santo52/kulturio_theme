@@ -1,0 +1,60 @@
+
+  
+.main-menu {
+  
+    @include media(desktop) {
+      display: block;
+      height: 50px;
+      left: 0;
+      position: static;
+      top: 0;
+    }
+
+    .modal-content {
+      background-color: $mandy;
+      @include media(desktop) {
+        background-color: $black;
+        padding: 0;
+        width: 100%;
+        max-width: initial;
+      }
+    }
+
+    .kulturai-main-menu {
+  
+      color: $white;
+      font-weight: 200;
+      margin: auto;
+      max-width: $content-max-width;
+      padding-left: 1.5rem;
+      
+      
+  
+      @include media(desktop) {
+        color: $black;
+        font-family: $h-font-family;
+        font-weight: 300;
+      }
+  
+      ul {
+        list-style: none;
+  
+        @include media(desktop) {
+          display: flex;
+          justify-content: flex-end;
+        }
+      }
+  
+      li {
+        align-items: center;
+        display: flex;
+      }
+  
+      a {
+        color: $white;
+        padding: .6rem;
+        text-decoration: none;
+        width: 100%;
+      }
+    }
+  }

@@ -36,7 +36,7 @@ $intro = get_field('intro');
                 <h2 class="intro-description-title"><?= $intro['title']; ?></h2>
                 <span class="intro-description-content"><p><?= $intro['text']; ?></p></span>
             </article>
-            <button class="btn btn-red">Suscríbete ahora</button>
+            <button class="subscription-button btn btn-red">Suscríbete ahora</button>
         </div>
         <div class="intro-image">
             <?php if(!empty($intro['image'])): ?>

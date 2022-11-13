@@ -70,6 +70,7 @@
     line-height: 1.2;
     text-align: center;
     max-width: 24.30rem;
+    margin: auto;
 
     @include media(laptop) {
       margin: 3rem 0;
@@ -95,7 +96,6 @@
     position: relative;
     left: 50%;
     margin-left: -65%;
-    max-width: 500px;
     margin-top: 4rem;
 
 

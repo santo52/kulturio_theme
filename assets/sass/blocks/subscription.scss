@@ -1,0 +1,23 @@
+
+@include media(laptop) {
+  #subscription-modal {
+
+    flex-direction: row;
+    left: 100%;
+    top: 0;
+    transition: left .3s ease-out;
+
+    &.modal--show {
+      left: 0;
+    }
+
+    .modal-content {
+      border-radius: 0;
+      max-width: 19rem;
+    }
+
+    .modal-header {
+      display: none;
+    }
+  }
+}

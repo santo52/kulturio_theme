@@ -67,10 +67,59 @@ function kulturai_the_logo( $type ) {
     if($logo) {
         echo wp_get_attachment_image($logo, 'full');
     } else {
-        echo "<img src='{$baseURL}/assets/images/logo-{$type}.png' alt='default logo {$type}' />";
+        echo "<img src='{$baseURL}/assets/images/logo-{$type}.svg' alt='default logo {$type}' />";
     }
 }
 
 add_filter( 'the_logo', 'kulturai_the_logo' );
+
+
+function kulturai_toolbars( $toolbars )
+{
+    $toolbars['Only Color' ] = array();
+    $toolbars['Only Color' ][1] = array(
+        "forecolor", "bold","undo" ,"redo"
+     );
+
+    return $toolbars;
+}
+
+
+add_filter( 'acf/fields/wysiwyg/toolbars' , 'kulturai_toolbars'  );
+
+
+function wysiwyg_render_field_settings( $field ) {
+	acf_render_field_setting( $field, array(
+		'label'			=> __('Height'),
+		'instructions'	=> __('Height of Editor after Init'),
+		'name'			=> 'wysiwyg_height',
+		'type'			=> 'number',
+	));
+}
+add_action('acf/render_field_settings/type=wysiwyg', 'wysiwyg_render_field_settings', 10, 1 );
+
+
+/**
+ * Render height on ACF WYSIWYG 
+ */
+function wysiwyg_render_field( $field ) {
+	$field_class = '.acf-'.str_replace('_', '-', $field['key']);
+?>
+	<style type="text/css">
+	<?php echo $field_class; ?> iframe {
+		min-height: <?php echo $field['wysiwyg_height']; ?>px; 
+	}
+	</style>
+	<script type="text/javascript">
+        jQuery(window).load(function() {
+            console.log(jQuery("<?php echo $field_class; ?>").find('iframe'))
+            jQuery('<?php echo $field_class; ?>').each(function() {
+                setTimeout(() => jQuery(this).find('iframe').height( <?php echo $field['wysiwyg_height']; ?> ), 0);
+	        });
+        })
+	</script>
+<?php
+}
+add_action( 'acf/render_field/type=wysiwyg', 'wysiwyg_render_field', 10, 1 );
 
 ?>

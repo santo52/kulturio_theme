@@ -4,19 +4,18 @@ var $ = jQuery;
 $(document).ready(() => {
 
     $('.hamburguer-menu').click(() => {
-        $('.main-menu').addClass('main-menu-show')
+        $('.main-menu').addClass('modal--show')
     })
 
-    $('.main-menu-background').click(() => {
-        $('.main-menu').removeClass('main-menu-show')
+    $('.modal-background').click(() => {
+        $('.modal').removeClass('modal--show')
     });
-
     
-
+    $('.subscription-button').click(() => {
+        $('#subscription-modal').addClass('modal--show')
+    })
 
     $(document).scroll(() => onScrollHeader())
-    
-
 })
 
 
