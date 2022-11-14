@@ -1,0 +1,69 @@
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 37.5rem;
+
+    @include media(laptop) {
+      margin-top: 2rem;
+      flex-direction: row;
+      min-height: auto;
+    }
+  
+    &-info {
+      display: flex;
+      flex-direction: column;
+      height: calc(100vh - $items-section-separation - $header-height);
+      justify-content: space-between;
+      padding-bottom: 2rem;
+  
+      @include media(laptop) {
+        flex-basis: 50%;
+        justify-content: flex-start;
+        height: 100%;
+  
+        button {
+          max-width: 18rem;
+        }
+      }
+    }
+  
+    &-icon {
+  
+      margin: 0 auto;
+      max-width: 500px;
+      width: 13rem;
+  
+      @include media(laptop) {
+        margin: 0;
+        width: 100%;
+      }
+    }
+  
+    &-description {
+      line-height: 1.2;
+      text-align: center;
+      max-width: 26rem;
+      margin: auto;
+  
+      @include media(laptop) {
+        margin: 3rem 0;
+        text-align: left;
+      }
+    }
+  
+    &-image {
+      width: 130%;
+      position: relative;
+      left: 50%;
+      margin-left: -65%;
+      margin-top: 4rem;
+  
+  
+      @include media(laptop) {
+        flex-basis: 50%;
+        margin: 0;
+        position: static;
+      }
+    }
+  }

@@ -1,0 +1,54 @@
+
+
+.mobile-menu .modal-content {
+    background-color: $mandy;
+}
+
+.desktop-menu {
+    width: $content-max-width;
+    margin: auto;
+}
+
+.kulturai-mobile-menu,
+.kulturai-desktop-menu {
+    ul {
+        list-style: none;
+    }
+
+    li {
+        align-items: center;
+        display: flex;
+    }
+
+    a {
+        color: $white;
+        padding: .6rem;
+        text-decoration: none;
+        width: 100%;
+    }
+}
+
+.kulturai-mobile-menu {
+    margin: auto;
+    padding-left: 1.5rem;
+    font-weight: 200;
+}
+
+.kulturai-desktop-menu {
+    max-width: $content-max-width;
+    font-family: $h-font-family;
+    font-weight: 300;
+    
+    ul {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    li.current-menu-item a{
+        color: $mandy;
+    }
+
+    a:hover {
+        color: $mid-aqua;
+    }
+}

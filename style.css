@@ -166,6 +166,7 @@ html {
   /* Apply border-box across the entire page. */
   box-sizing: border-box;
   font-family: "Roboto Mono", monospace;
+  margin-top: 0 !important;
 }
 
 /**
@@ -178,6 +179,7 @@ html {
 body {
   font-size: 14px;
   font-weight: normal;
+  color: #fff;
   text-align: left;
   background-color: #000;
 }
@@ -194,6 +196,34 @@ h4,
 h5,
 h6 {
   font-family: "Open Sans", sans-serif;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+}
+
+h5 {
+  font-size: 1.1rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  font-weight: 300;
 }
 
 button {
@@ -221,30 +251,7 @@ main {
   }
 }
 
-.section-block {
-  padding-bottom: 2rem;
-  min-height: 600px;
-}
-
-h1.color-yellow,
-h1 .color-yellow,
-h2.color-yellow,
-h2 .color-yellow,
-h3.color-yellow,
-h3 .color-yellow,
-h4.color-yellow,
-h4 .color-yellow,
-h5.color-yellow,
-h5 .color-yellow,
-h6.color-yellow,
-h6 .color-yellow,
-p.color-yellow,
-p .color-yellow {
-  color: #e6f698;
-}
-
 .btn {
-  color: #fff;
   border: none;
   outline: 0;
   padding: 0.7rem 3rem;
@@ -254,11 +261,60 @@ p .color-yellow {
   border-radius: 2rem;
 }
 .btn-red {
+  color: #fff;
   background-color: #d53e4f;
 }
 .btn-red:hover {
   background-color: #67c1a4;
   color: #000;
+}
+
+.mobile-menu .modal-content {
+  background-color: #d53e4f;
+}
+
+.desktop-menu {
+  width: 1024px;
+  margin: auto;
+}
+
+.kulturai-mobile-menu ul,
+.kulturai-desktop-menu ul {
+  list-style: none;
+}
+.kulturai-mobile-menu li,
+.kulturai-desktop-menu li {
+  align-items: center;
+  display: flex;
+}
+.kulturai-mobile-menu a,
+.kulturai-desktop-menu a {
+  color: #fff;
+  padding: 0.6rem;
+  text-decoration: none;
+  width: 100%;
+}
+
+.kulturai-mobile-menu {
+  margin: auto;
+  padding-left: 1.5rem;
+  font-weight: 200;
+}
+
+.kulturai-desktop-menu {
+  max-width: 1024px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+}
+.kulturai-desktop-menu ul {
+  display: flex;
+  justify-content: flex-end;
+}
+.kulturai-desktop-menu li.current-menu-item a {
+  color: #d53e4f;
+}
+.kulturai-desktop-menu a:hover {
+  color: #67c1a4;
 }
 
 .modal {
@@ -325,58 +381,18 @@ p .color-yellow {
   border-radius: 2rem 2rem 0 0;
 }
 
-@media only screen and (min-width: 822px) {
-  .main-menu {
-    display: block;
-    height: 50px;
-    left: 0;
-    position: static;
-    top: 0;
-  }
+.padding-bottom {
+  padding-bottom: 3rem;
 }
-.main-menu .modal-content {
-  background-color: #d53e4f;
+.padding-top {
+  padding-top: 3rem;
 }
-@media only screen and (min-width: 822px) {
-  .main-menu .modal-content {
-    background-color: #000;
-    padding: 0;
-    width: 100%;
-    max-width: initial;
-  }
+
+.margin-bottom {
+  margin-bottom: 3rem;
 }
-.main-menu .kulturai-main-menu {
-  color: #fff;
-  font-weight: 200;
-  margin: auto;
-  max-width: 1024px;
-  padding-left: 1.5rem;
-}
-@media only screen and (min-width: 822px) {
-  .main-menu .kulturai-main-menu {
-    color: #000;
-    font-family: "Open Sans", sans-serif;
-    font-weight: 300;
-  }
-}
-.main-menu .kulturai-main-menu ul {
-  list-style: none;
-}
-@media only screen and (min-width: 822px) {
-  .main-menu .kulturai-main-menu ul {
-    display: flex;
-    justify-content: flex-end;
-  }
-}
-.main-menu .kulturai-main-menu li {
-  align-items: center;
-  display: flex;
-}
-.main-menu .kulturai-main-menu a {
-  color: #fff;
-  padding: 0.6rem;
-  text-decoration: none;
-  width: 100%;
+.margin-top {
+  margin-top: 3rem;
 }
 
 @media only screen and (min-width: 652px) {
@@ -400,7 +416,7 @@ p .color-yellow {
 .kulturio-header {
   background-color: transparent;
   display: flex;
-  height: 50px;
+  height: 3rem;
   justify-content: space-between;
   padding: 0 10px;
   position: relative;
@@ -425,7 +441,7 @@ p .color-yellow {
   right: 10px;
   top: 0;
 }
-.kulturio-header .header-fixed {
+.kulturio-header .sticky-header {
   background: #000;
   height: 50px;
   left: 0;
@@ -436,33 +452,63 @@ p .color-yellow {
   width: 100%;
   z-index: 999;
 }
-.kulturio-header .header-fixed > div {
+.kulturio-header .sticky-header > div {
   display: flex;
   max-width: 1024px;
   margin: auto;
   height: 100%;
   justify-content: space-between;
 }
-.kulturio-header.scrolled .header-fixed {
+.kulturio-header.scrolled .sticky-header {
   top: 0;
 }
 
+.fixed-header .kulturio-header .sticky-header {
+  top: 0;
+}
+.fixed-header .kulturio-header > .hamburguer-menu {
+  display: none;
+}
+
+.home-video {
+  height: 70%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  opacity: 0.65;
+  overflow: hidden;
+}
+.home-video video {
+  max-height: 100vh;
+  height: 100%;
+  width: auto;
+}
+@media only screen and (min-width: 822px) {
+  .home-video video {
+    width: 100%;
+    height: auto;
+  }
+}
+
 .intro {
-  color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  min-height: 37.5rem;
 }
 @media only screen and (min-width: 652px) {
   .intro {
     margin-top: 2rem;
     flex-direction: row;
+    min-height: auto;
   }
 }
 .intro-info {
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 50px);
+  height: calc(100vh - 3rem - 3rem);
   justify-content: space-between;
   padding-bottom: 2rem;
 }
@@ -470,6 +516,7 @@ p .color-yellow {
   .intro-info {
     flex-basis: 50%;
     justify-content: flex-start;
+    height: 100%;
   }
   .intro-info button {
     max-width: 18rem;
@@ -489,26 +536,13 @@ p .color-yellow {
 .intro-description {
   line-height: 1.2;
   text-align: center;
-  max-width: 24.3rem;
+  max-width: 26rem;
   margin: auto;
 }
 @media only screen and (min-width: 652px) {
   .intro-description {
     margin: 3rem 0;
     text-align: left;
-  }
-}
-.intro-description-content {
-  font-weight: 200;
-  margin-top: 2rem;
-  display: inline-block;
-  padding: 0 2rem;
-  line-height: 1.4;
-}
-@media only screen and (min-width: 652px) {
-  .intro-description-content {
-    margin-top: 1rem;
-    padding: 0;
   }
 }
 .intro-image {
@@ -523,6 +557,91 @@ p .color-yellow {
     flex-basis: 50%;
     margin: 0;
     position: static;
+  }
+}
+
+.whoarewe {
+  text-align: center;
+}
+.whoarewe-text {
+  max-width: 600px;
+  margin: auto;
+}
+.whoarewe-bolo {
+  margin-bottom: 6rem;
+}
+.whoarewe-bolo img {
+  width: 220%;
+  height: 100%;
+}
+@media only screen and (min-width: 652px) {
+  .whoarewe-bolo img {
+    width: 100%;
+  }
+}
+.whoarewe-slide {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+.whoarewe-slide > span {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  line-height: 0;
+  font-size: 16px;
+  position: relative;
+  right: 0;
+}
+@media only screen and (min-width: 652px) {
+  .whoarewe-slide {
+    visibility: hidden;
+  }
+}
+.whoarewe-table {
+  width: 20rem;
+  margin: auto;
+  margin-top: 1.2rem;
+  width: 100%;
+}
+@media only screen and (min-width: 652px) {
+  .whoarewe-table {
+    display: flex;
+    width: auto;
+  }
+}
+.whoarewe-table-row {
+  position: relative;
+}
+.whoarewe-table-row:after {
+  content: "";
+  display: block;
+  width: 0.05rem;
+  background: #fff;
+  margin: 1.5rem auto;
+  height: 5rem;
+}
+.whoarewe-table-row:last-child:after {
+  display: none;
+}
+@media only screen and (min-width: 652px) {
+  .whoarewe-table-row {
+    flex-basis: 33%;
+    padding: 0 1rem;
+  }
+  .whoarewe-table-row:after {
+    margin: 0;
+    position: absolute;
+    top: -0.2rem;
+    right: 0;
+    height: 90%;
+  }
+  .whoarewe-table-row:first-child {
+    padding-left: 0;
+  }
+  .whoarewe-table-row:last-child {
+    padding-right: 0;
   }
 }
 

@@ -1,0 +1,58 @@
+
+.kulturio-header {
+
+    background-color: transparent;
+    display: flex;
+    height: $header-height;
+    justify-content: space-between;
+    padding: 0 $header-parent-padding;
+    position: relative;
+    width: 100%;
+  
+    .hamburguer-menu,
+    .logo {
+      height: 100%;
+      padding: 1rem;
+  
+      img {
+        height: 100%;
+        width: auto;
+      }
+    }
+    
+    .hamburguer-menu {
+      cursor: pointer;
+      padding: 1rem;
+  
+      &.fixed {
+        position: absolute;
+        right: $header-parent-padding;
+        top: 0;
+      }
+    }
+  
+    .sticky-header {
+      background: $black;
+      height: 50px;
+      left: 0;
+      padding: 0 $header-parent-padding;
+      position: fixed;
+      top: -50px;
+      transition: top .5s;
+      width: 100%;
+      z-index: 999;
+  
+      > div {
+        display: flex;
+        max-width: $content-max-width;
+        margin: auto;
+        height: 100%;
+        justify-content: space-between;
+  
+      }
+    }
+  
+    &.scrolled .sticky-header {
+      top: 0;
+    }
+  }

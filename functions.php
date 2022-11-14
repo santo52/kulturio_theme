@@ -11,7 +11,8 @@
 
 function kulturai_menus() {
     register_nav_menus(array(
-        'kulturai-main-menu' => __( 'Main Menu', 'kulturai' )
+        'kulturai-main-menu' => __( 'Mobile Menu', 'kulturai' ),
+        'kulturai-desktop-menu' => __( 'Desktop Menu', 'kulturai' ),
     ));
 }
  
@@ -64,11 +65,14 @@ function kulturai_the_logo( $type ) {
 
     $baseURL = get_template_directory_uri();
     $logo = get_theme_mod("logo_{$type}");
+
     if($logo) {
-        echo wp_get_attachment_image($logo, 'full');
+        $logoImage = wp_get_attachment_image($logo, 'full');
     } else {
-        echo "<img src='{$baseURL}/assets/images/logo-{$type}.svg' alt='default logo {$type}' />";
+        $logoImage = "<img src='{$baseURL}/assets/images/logo-{$type}.svg' alt='default logo {$type}' />";
     }
+
+    echo "<a href='/'>{$logoImage}</a>";
 }
 
 add_filter( 'the_logo', 'kulturai_the_logo' );
@@ -78,8 +82,12 @@ function kulturai_toolbars( $toolbars )
 {
     $toolbars['Only Color' ] = array();
     $toolbars['Only Color' ][1] = array(
-        "forecolor", "bold","undo" ,"redo"
+        "formatselect", "forecolor", "bold","", "undo" ,"redo"
      );
+
+
+    //  var_dump($toolbars['Full']);
+    //  $toolbars['Only Color' ]=$toolbars['Full'];
 
     return $toolbars;
 }

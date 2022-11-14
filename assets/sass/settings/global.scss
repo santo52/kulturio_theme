@@ -36,11 +36,12 @@
  
  html {
      /* Apply border-box across the entire page. */
-     box-sizing: border-box;
+    box-sizing: border-box;
  
      // HTML resets
-     font-family: $font-family;
+    font-family: $font-family;
     //  line-height: var(--global--line-height-body);
+    margin-top: 0 !important;
  }
  
  /**
@@ -59,7 +60,7 @@
  body {
     font-size: 14px;
     font-weight: normal;
-//  color: var(--global--color-primary);
+    color: $white;
     text-align: left;
     background-color: $black;
     @include media(small-mobile) {
@@ -74,6 +75,37 @@
  h5,
  h6 {
     font-family: $h-font-family;
+ }
+
+ h1 {
+    font-size: 2rem;
+ }
+
+ h2 {
+    font-size: 1.6rem;
+ }
+
+ h3 {
+    font-size: 1.3rem;
+ }
+
+
+ h4 {
+    font-size: 1.2rem;
+ }
+
+
+ h5 {
+    font-size: 1.1rem;
+ }
+
+
+ h6 {
+    font-size: 1rem;
+ }
+
+ p {
+    font-weight: 300;
  }
  
  
@@ -99,3 +131,11 @@
         max-width: $content-max-width;
     }
  }
+
+//  .slide {
+//     transition: transform .5s;
+//  }
+
+// #wpadminbar {
+//     display: none;
+// }

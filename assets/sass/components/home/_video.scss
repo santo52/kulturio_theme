@@ -1,0 +1,21 @@
+.home-video {
+    height: 70%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    opacity: .65;
+    overflow: hidden;
+    video {
+      max-height: 100vh;
+      height: 100%;
+      width: auto;
+      @include media(desktop) {
+        width: 100%;
+        height: auto;
+      }
+    }
+}
+  
+  

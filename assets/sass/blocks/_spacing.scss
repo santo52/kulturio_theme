@@ -1,0 +1,20 @@
+.padding {
+    &-bottom {
+        padding-bottom: $items-section-separation;
+    } 
+
+    &-top {
+        padding-top: $items-section-separation;
+    }
+}
+
+.margin {
+    &-bottom {
+        margin-bottom: $items-section-separation;
+    } 
+
+    &-top {
+        margin-top: $items-section-separation;
+    }
+}
+

@@ -101,12 +101,7 @@
 // @import "04-elements/links";
 
 // /* Category 05 is all about adjusting the default block styles to the given layout. I only added three blocks as examples. */
-@import "blocks/section";
-@import "blocks/paragraph";
-@import "blocks/button";
-@import "blocks/modal";
-@import "blocks/menu";
-@import "blocks/subscription";
+@import "blocks";
 
 // /* Category 06 contains all "bigger" components which contain elements of the previous two categories like header, footer, page template, single template, comments section, archives, ... */
 @import "components/header";
