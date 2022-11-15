@@ -130,4 +130,30 @@ function wysiwyg_render_field( $field ) {
 }
 add_action( 'acf/render_field/type=wysiwyg', 'wysiwyg_render_field', 10, 1 );
 
+
+// function kulturai_widgets() {
+//     register_sidebar(array(
+//         'name' => 'Menu Footer 1',
+//         'id' => 'footer_menu_1',
+//         'before_widget' => '<div class="footer-widget">',
+//         'after_widget' => '</div>',
+//     ));
+//     register_sidebar(array(
+//         'name' => 'Menu Footer 2',
+//         'id' => 'footer_menu_2',
+//     ));
+// }
+
+// add_action('widgets_init', 'kulturai_widgets');
+
+
+// function custom_admin_js($hook) {
+//     echo "<script>localStorage.setItem('template_directory_uri', '" . get_template_directory_uri() . "')</script>";
+//     if($hook === 'widgets.php') {
+//         $url = get_template_directory_uri() . '/assets/js/wp-widgets.js';
+//         wp_enqueue_script('handle', $url);
+//     }
+// }
+// add_action('admin_enqueue_scripts', 'custom_admin_js');
+
 ?>

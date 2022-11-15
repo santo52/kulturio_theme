@@ -1,0 +1,33 @@
+.background-fixed {
+    height: 22.5rem;
+    background-attachment: fixed;
+    background-position: top center;
+    background-size: cover;
+}
+
+.services {
+    text-align: center;
+    @include media(laptop) {
+        padding-top: 6rem;
+    }
+
+    &-table {
+        @include media(laptop) {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 3rem;
+        }
+    }
+
+    &-table-row {
+        flex-basis: 33.33%;
+        margin-right: 2rem;
+        margin-top: 3rem;
+        &:last-child {
+            margin-right: 0;
+        }
+        img {
+            width: 4rem;
+        }
+    }
+}

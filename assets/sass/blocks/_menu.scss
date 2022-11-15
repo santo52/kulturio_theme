@@ -5,8 +5,20 @@
 }
 
 .desktop-menu {
-    width: $content-max-width;
-    margin: auto;
+    &-nav-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .subscription-button{
+        height: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+        width: max-content;
+        padding: 0 2rem;
+    }
 }
 
 .kulturai-mobile-menu,
@@ -35,7 +47,7 @@
 }
 
 .kulturai-desktop-menu {
-    max-width: $content-max-width;
+    // max-width: $max_content_width;
     font-family: $h-font-family;
     font-weight: 300;
     

@@ -1,0 +1,43 @@
+.methodology {
+    text-align: center;
+
+    &-text {
+        max-width: 600px;
+        margin: auto;
+    }
+
+    &-image {
+        
+        @include media(laptop) {
+            transform: translateX(0) !important;
+        }
+        
+        img {
+            width: 220%;
+            height: 100%;
+            @include media(laptop) {
+                width: 100%;
+            }
+        }
+    }
+
+    &-slide {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+        > span {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            line-height: 0;
+            font-size: 16px;
+            position: relative;
+            right: 0;
+        }
+
+        @include media(laptop) {
+            visibility: hidden;
+        }
+    }
+}

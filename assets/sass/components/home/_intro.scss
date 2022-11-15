@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: space-between;
     min-height: 37.5rem;
+    background-color: transparent;
 
     @include media(laptop) {
       margin-top: 2rem;
@@ -57,13 +58,35 @@
       position: relative;
       left: 50%;
       margin-left: -65%;
-      margin-top: 4rem;
-  
+      padding-top: 4rem;
+      background-color: $black;
   
       @include media(laptop) {
         flex-basis: 50%;
         margin: 0;
         position: static;
+        background-color: transparent;
+      }
+    }
+  }
+
+  .subscription-button-mobile {
+    display: none;
+    position: fixed;
+    padding: 1.5rem 2.5rem;
+    width: 100%;
+    left: 0;
+    z-index: 10;
+    bottom: 0;
+
+    button {
+      max-width: 100%;
+    }
+
+    &.fixed {
+      display: block;
+      @include media(desktop) {
+        display: none;
       }
     }
   }

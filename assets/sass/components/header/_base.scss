@@ -4,7 +4,7 @@
     background-color: transparent;
     display: flex;
     height: $header-height;
-    justify-content: space-between;
+    justify-content: flex-end;
     padding: 0 $header-parent-padding;
     position: relative;
     width: 100%;
@@ -44,7 +44,7 @@
   
       > div {
         display: flex;
-        max-width: $content-max-width;
+        // max-width: $max_content_width;
         margin: auto;
         height: 100%;
         justify-content: space-between;

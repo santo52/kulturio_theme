@@ -22,13 +22,23 @@ $(document).ready(() => {
 
     sliderInit();
 
-    $(document).scroll(() => onScrollHeader())
+    $(document).scroll(() => {
+      onScrollHeader();
+      onScrollSubscription();
+    })
 })
 
 
 
-function handleClickHeaderMenu() {
-    alert();
+function onScrollSubscription() {
+  const $subsButtonMobile = $('.subscription-button-mobile');
+  const introTop = $('.intro-image').position().top;
+  const scrollTop = $(this).scrollTop();
+  if(scrollTop >= introTop) {
+    $subsButtonMobile.addClass('fixed');
+  } else {
+    $subsButtonMobile.removeClass('fixed');
+  }
 }
 
 
@@ -47,6 +57,35 @@ function onScrollHeader() {
 }
 
 
+function imageSlider() {
+  const slides = Array.from(document.querySelectorAll('.image-slider'));
+  slides.forEach((slide, index) => {
+    const images = slide.querySelectorAll('img');
+
+    if(images.length) {
+
+      const sizePercent = images.length > 1 ? images.length * 75 : 100;
+
+      const slideContainer = document.createElement("div");
+      slideContainer.setAttribute('class', 'slide');
+
+      const slideContent = document.createElement("div");
+      slideContent.setAttribute('class', 'slide-content');
+      slideContent.style.width = sizePercent + '%';
+
+      images.forEach((sourceImage) => {
+        const imageClone = new Image();
+        imageClone.src = sourceImage.src;
+        slideContent.appendChild(imageClone);
+        sourceImage.remove();
+      });
+
+      slideContainer.appendChild(slideContent);
+      slide.appendChild(slideContainer);
+    }
+  })
+}
+
 
 function sliderInit() {
     let isDragging = false,
@@ -56,21 +95,26 @@ function sliderInit() {
         animationID,
         currentIndex = 0
 
+    imageSlider();
+
     const slides = Array.from(document.querySelectorAll('.slide'));
 
     slides.forEach((slide, index) => {
-        const slideImage = slide.querySelector('img')
-        // disable default image drag
-        slideImage.addEventListener('dragstart', (e) => e.preventDefault())
-        // touch events
-        slide.addEventListener('touchstart', touchStart(index))
-        slide.addEventListener('touchend', touchEnd)
-        slide.addEventListener('touchmove', touchMove)
-        // mouse events
-        slide.addEventListener('mousedown', touchStart(index))
-        slide.addEventListener('mouseup', touchEnd)
-        slide.addEventListener('mousemove', touchMove)
-        slide.addEventListener('mouseleave', touchEnd)
+        const slideImage = slide.querySelector('.slide-content')
+        console.log(slideImage)
+        if(slideImage) {
+          // disable default image drag
+          slideImage.addEventListener('dragstart', (e) => e.preventDefault())
+          // touch events
+          slide.addEventListener('touchstart', touchStart(index))
+          slide.addEventListener('touchend', touchEnd)
+          slide.addEventListener('touchmove', touchMove)
+          // mouse events
+          slide.addEventListener('mousedown', touchStart(index))
+          slide.addEventListener('mouseup', touchEnd)
+          slide.addEventListener('mousemove', touchMove)
+          slide.addEventListener('mouseleave', touchEnd)
+        }
     })
 
     window.addEventListener('resize', setPositionByIndex)
@@ -122,7 +166,11 @@ function touchStart(index) {
 
   function setSliderPosition() {
     const currentSlide = slides[currentIndex];
-    const childWidth = currentSlide.childNodes[1].offsetWidth
+    const slideContent = currentSlide.querySelector('.slide-content')
+
+    if(!slideContent) return;
+
+    const childWidth = slideContent.offsetWidth
     const isActive = currentSlide.offsetWidth < childWidth;
     
     if(!isActive) return;
@@ -133,5 +181,4 @@ function touchStart(index) {
 
     currentSlide.style.transform = `translateX(${currentTranslate}px)`
   }
-    
 }

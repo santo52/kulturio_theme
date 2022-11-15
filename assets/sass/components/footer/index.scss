@@ -1,0 +1,72 @@
+.footer {
+    position: relative;
+    padding-bottom: 5rem;
+
+    @include media(desktop) {
+        padding-bottom: 2rem;
+    }
+
+    &-org-info {
+        width: 15.06rem;
+        text-align: justify;
+    }
+
+    &-section {
+        padding-bottom: 1rem;
+    }
+
+    &-item {
+        line-height: 1.7;
+        a {
+            text-decoration: none;
+            color: $white;
+        }
+    }
+
+    &-contact,
+    &-social-media {
+        padding-left: 0.5rem;
+    }
+
+    &-social-media .icon {
+        padding-left: 2rem;
+        margin-top: 1rem;
+    }
+
+    &-mobile-bolo {
+        display: none;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        img {
+            margin-left: 40%;
+        }
+
+        @include media(mobile) {
+            display: block;
+        }
+
+        @include media(laptop) {
+            display: none;
+        }
+    }
+
+    @include media(laptop) {
+        &,
+        &-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-grow: 1;
+        }
+
+        &-info {
+            max-width: 50%;
+            min-width: 27rem;
+        }
+    }
+}
+
+.footer-curve.curve {
+    transform: rotateX(180deg);
+}

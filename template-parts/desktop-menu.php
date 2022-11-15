@@ -5,7 +5,10 @@
             <div class="logo">
                 <?php apply_filters('the_logo', "desktop"); ?>
             </div>
-            <?php get_template_part('template-parts/desktop-menu-items'); ?>
+            <span class="desktop-menu-nav-container">
+                <?php get_template_part('template-parts/desktop-menu-items'); ?>
+                <button class="subscription-button btn btn-red">Suscríbete ahora</button>
+            </span>
         </div>
     </div>
 </div>

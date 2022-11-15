@@ -1,0 +1,9 @@
+.image-slider {
+    .slide-content {
+        display: flex;
+        @include media(laptop) {
+            width: 100% !important;
+            display: block;
+        }
+    }
+}

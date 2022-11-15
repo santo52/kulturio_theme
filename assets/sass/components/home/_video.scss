@@ -7,14 +7,12 @@
     width: 100%;
     opacity: .65;
     overflow: hidden;
+    position: fixed;
+    height: 100%;
     video {
       max-height: 100vh;
       height: 100%;
       width: auto;
-      @include media(desktop) {
-        width: 100%;
-        height: auto;
-      }
     }
 }
   

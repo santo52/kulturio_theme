@@ -18,3 +18,13 @@
     }
 }
 
+.section-block {
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    @include media(small-mobile) {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+}
+
