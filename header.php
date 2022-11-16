@@ -45,7 +45,7 @@
             </div>
         </div>
 
-        <div id="resource-modal" class="resource-modal modal modal--right modal--dark modal--show">
+        <div id="resource-modal" class="resource-modal modal modal--right modal--dark">
             <div class="modal-background">
                 <img src="<?= get_template_directory_uri(); ?>/assets/images/close.png" alt="close button">
             </div>

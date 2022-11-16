@@ -88,6 +88,40 @@ $(document).ready(() => {
       onScrollSubscription();
     })
 
+
+    
+
+    $('.resources-form form').on('submit', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      
+      const formData = new FormData(e.target);
+      formData.append('action', 'kulturai_ajax_resource_form')
+      
+       $.fn.ajaxForm({
+         target: e.taget,
+         url : kulturai_vars.ajaxurl,
+         type: 'post',
+         data: formData,
+         success: function(res){
+            if(res.saved) {
+
+              const $resourceModal = $(e.target).parents('#resource-modal');
+              if($resourceModal.length) {
+                $($resourceModal[0]).removeClass('modal--show');
+              } else {
+                $('.alert').show();
+              }
+              $(e.target)[0].reset();
+              if(res.resource) {
+                window.open('http://localhost/wp-content/uploads/2022/11/84294797_20221101.pdf', '_blank')
+              }
+            }
+         },
+      })
+    })
+
     $('.contact-form form').on('submit', (e) => {
       e.preventDefault();
       e.stopPropagation();

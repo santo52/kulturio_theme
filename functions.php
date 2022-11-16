@@ -14,7 +14,11 @@
 
  require get_template_directory() . '/inc/custom-admin.php';
 
- require get_template_directory() . '/inc/contact-cpt.php';
+
+ //Forms
+ require get_template_directory() . '/inc/forms/forms-cpt.php';
+ require get_template_directory() . '/inc/forms/contact-cpt.php';
+ require get_template_directory() . '/inc/forms/resources-cpt.php';
 
 
 function kulturai_menus() {

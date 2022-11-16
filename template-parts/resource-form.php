@@ -24,7 +24,7 @@
                     <input required name="email" type="email" placeholder="Email" class="kulturai-form-control" />
                 </div>
                 <div class="kulturai-form-group">
-                    <input required name="subject" type="text" placeholder="Compañia" class="kulturai-form-control" />
+                    <input required name="company" type="text" placeholder="Compañia" class="kulturai-form-control" />
                 </div>
                 <div class="margin-top">
                     <input type="submit" class="btn btn-red" value="<?= get_theme_mod('kulturai_resources_button_text'); ?>" />
