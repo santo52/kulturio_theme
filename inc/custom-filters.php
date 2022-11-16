@@ -33,4 +33,19 @@ function kulturai_the_thumbnail( $type ) {
 add_filter( 'the_thumbnail', 'kulturai_the_thumbnail' );
 
 
+
+
+function kulturai_the_author_name() {
+
+    $firstName = get_the_author_meta('user_firstname');
+    $lastName = get_the_author_meta('user_lastname');
+    
+    if($firstName) echo $firstName;
+
+    if($firstName && $lastName) echo " ";
+
+    if($lastName) echo $lastName;
+}
+
+add_filter( 'the_author_name', 'kulturai_the_author_name' );
 ?>

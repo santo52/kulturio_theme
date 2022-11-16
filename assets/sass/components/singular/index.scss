@@ -1,0 +1,22 @@
+.singular {
+    padding: 3rem;
+    max-width: 70rem;
+    margin: auto;
+    &-title {
+        color: $mandy;
+        margin-bottom: 2rem;
+    }
+
+    &-author {
+        font-weight: bold;
+    }
+
+    @include media(desktop) {
+
+        padding: 4rem;
+
+        &-info {
+            margin-top: 2rem;
+        }
+    }
+}

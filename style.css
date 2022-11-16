@@ -232,6 +232,7 @@ h6 {
 }
 p {
   font-weight: 300;
+  margin-bottom: 1rem;
 }
 
 button {
@@ -1014,6 +1015,27 @@ main > * {
   width: 6rem !important;
   height: auto !important;
   opacity: 0.3;
+}
+
+.singular {
+  padding: 3rem;
+  max-width: 70rem;
+  margin: auto;
+}
+.singular-title {
+  color: #d53e4f;
+  margin-bottom: 2rem;
+}
+.singular-author {
+  font-weight: bold;
+}
+@media only screen and (min-width: 822px) {
+  .singular {
+    padding: 4rem;
+  }
+  .singular-info {
+    margin-top: 2rem;
+  }
 }
 
 .footer {
