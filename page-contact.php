@@ -8,6 +8,8 @@
 
 <?php apply_filters('the_thumbnail', 'fixed'); ?>
 
-<?php get_template_part('template-parts/contact-form') ?>
+<div class="margin-top">
+    <?php get_template_part('template-parts/contact-form') ?>
+</div>
 
 <?php get_footer(); ?>

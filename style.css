@@ -409,6 +409,13 @@ main > * {
 .modal--bottom.modal--round .modal-content {
   border-radius: 2rem 2rem 0 0;
 }
+.modal--dark .modal-background {
+  background-color: transparent;
+}
+.modal--dark .modal-content {
+  background: #000;
+  border-left: 2px solid white;
+}
 
 .padding-bottom {
   padding-bottom: 3rem;
@@ -1075,7 +1082,7 @@ main > * {
 .contact-description {
   text-align: center;
   display: block;
-  width: 19rem;
+  max-width: 19rem;
   margin: 1rem auto;
   font-weight: 300;
 }
@@ -1083,6 +1090,21 @@ main > * {
   max-width: 19rem;
   margin: auto;
   padding: 1rem;
+}
+
+.resources-menu-action,
+.contact-menu-action {
+  cursor: pointer;
+}
+
+.contact-modal .modal-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 25rem;
+}
+.contact-modal .contact-form {
+  max-width: 100%;
 }
 
 .singular {

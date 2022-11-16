@@ -40,7 +40,7 @@ $(document).ready(() => {
     if($(this).hasClass('alert')) {
       $(this).removeClass('alert--open');
       $(this).removeClass('alert--close');
-  
+      
       $(this).addClass('alert--open');
       setTimeout(() => {
         $(this).addClass('alert--close');
@@ -49,6 +49,9 @@ $(document).ready(() => {
     }
   }
 
+    $('.contact-menu-action').click(() => {
+      $('#contact-modal').addClass('modal--show')
+    })
 
     $('.hamburguer-menu').click(() => {
         $('.mobile-menu .modal').addClass('modal--show')
@@ -70,9 +73,6 @@ $(document).ready(() => {
     })
 
 
-    $
-
-
     $('.contact-form form').on('submit', (e) => {
       e.preventDefault();
       e.stopPropagation();
@@ -88,7 +88,14 @@ $(document).ready(() => {
          data: formData,
          success: function(res){
             if(res.saved) {
-              $('.alert').show();
+
+              const $contactModal = $(e.target).parents('#contact-modal');
+              if($contactModal.length) {
+                $($contactModal[0]).removeClass('modal--show');
+              } else {
+                $('.alert').show();
+              }
+              
               $(e.target)[0].reset();
             }
          },

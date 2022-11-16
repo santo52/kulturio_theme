@@ -32,6 +32,18 @@
                 </div>
             </div>
         </div>
+
+        <div id="contact-modal" class="contact-modal modal modal--right modal--dark">
+            <div class="modal-background">
+                <img src="<?= get_template_directory_uri(); ?>/assets/images/close.png" alt="close button">
+            </div>
+            
+            <div class="modal-content">
+                <div class="modal-body">
+                    <?php get_template_part('template-parts/contact-form') ?>
+                </div>
+            </div>
+        </div>
         
 
         <main class="container">

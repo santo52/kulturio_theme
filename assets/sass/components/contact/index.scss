@@ -16,7 +16,7 @@
     &-description {
         text-align: center;
         display: block;
-        width: 19rem;
+        max-width: 19rem;
         margin: 1rem auto;
         font-weight: 300;
     }
@@ -25,5 +25,23 @@
         max-width: 19rem;
         margin: auto;
         padding: 1rem;
+    }
+}
+
+.resources-menu-action,
+.contact-menu-action {
+    cursor: pointer;
+}
+
+.contact-modal {
+    .modal-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 25rem;
+    }
+
+    .contact-form {
+        max-width: 100%;
     }
 }
