@@ -10,9 +10,14 @@
     position: fixed;
     height: 100%;
     video {
-      max-height: 100vh;
       height: 100%;
       width: auto;
+
+      @include media(wide) {
+        width: 100%;
+        height: auto;
+      }
+
     }
 }
   

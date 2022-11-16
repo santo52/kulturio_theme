@@ -1,5 +1,7 @@
 <div class="desktop-menu from-desktop">
-    <?php get_template_part('template-parts/desktop-menu-items'); ?>
+    <span class="static-header">
+        <?php get_template_part('template-parts/desktop-menu-items'); ?>
+    </span>
     <div class="sticky-header">
         <div>
             <div class="logo">

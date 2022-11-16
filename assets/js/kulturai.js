@@ -31,13 +31,17 @@ $(document).ready(() => {
 
 
 function onScrollSubscription() {
-  const $subsButtonMobile = $('.subscription-button-mobile');
-  const introTop = $('.intro-image').position().top;
-  const scrollTop = $(this).scrollTop();
-  if(scrollTop >= introTop) {
-    $subsButtonMobile.addClass('fixed');
-  } else {
-    $subsButtonMobile.removeClass('fixed');
+  const $introImage = $('.intro-image'); 
+
+  if($introImage.length) {
+    const $subsButtonMobile = $('.subscription-button-mobile');
+    const introTop = $introImage.position().top;
+    const scrollTop = $(this).scrollTop();
+    if(scrollTop >= introTop) {
+      $subsButtonMobile.addClass('fixed');
+    } else {
+      $subsButtonMobile.removeClass('fixed');
+    }
   }
 }
 
@@ -45,14 +49,16 @@ function onScrollSubscription() {
 
 function onScrollHeader() {
     const $header = $('.kulturio-header');
-    const headerBottomPosition = 100;
-    const scrollTop = $(this).scrollTop();
-    const headerIsScrolled = $header.hasClass('scrolled');
+    if($header.length) {
+      const headerBottomPosition = 100;
+      const scrollTop = $(this).scrollTop();
+      const headerIsScrolled = $header.hasClass('scrolled');
 
-    if(scrollTop >= headerBottomPosition) {
-        !headerIsScrolled && $header.addClass('scrolled');
-    } else {
-        $header.removeClass('scrolled');
+      if(scrollTop >= headerBottomPosition) {
+          !headerIsScrolled && $header.addClass('scrolled');
+      } else {
+          $header.removeClass('scrolled');
+      }
     }
 }
 
@@ -101,7 +107,6 @@ function sliderInit() {
 
     slides.forEach((slide, index) => {
         const slideImage = slide.querySelector('.slide-content')
-        console.log(slideImage)
         if(slideImage) {
           // disable default image drag
           slideImage.addEventListener('dragstart', (e) => e.preventDefault())
@@ -165,20 +170,23 @@ function touchStart(index) {
   }
 
   function setSliderPosition() {
-    const currentSlide = slides[currentIndex];
-    const slideContent = currentSlide.querySelector('.slide-content')
+    const currentSlide = slides && slides[currentIndex];
 
-    if(!slideContent) return;
+    if(currentSlide) {
+      const slideContent = currentSlide.querySelector('.slide-content')
 
-    const childWidth = slideContent.offsetWidth
-    const isActive = currentSlide.offsetWidth < childWidth;
-    
-    if(!isActive) return;
+      if(!slideContent) return;
 
-    if(currentTranslate > 0) currentTranslate = 0;
+      const childWidth = slideContent.offsetWidth
+      const isActive = currentSlide.offsetWidth < childWidth;
+      
+      if(!isActive) return;
 
-    if(currentTranslate < currentSlide.offsetWidth - childWidth) currentTranslate = currentSlide.offsetWidth - childWidth;
+      if(currentTranslate > 0) currentTranslate = 0;
 
-    currentSlide.style.transform = `translateX(${currentTranslate}px)`
+      if(currentTranslate < currentSlide.offsetWidth - childWidth) currentTranslate = currentSlide.offsetWidth - childWidth;
+
+      currentSlide.style.transform = `translateX(${currentTranslate}px)`
+    }
   }
 }

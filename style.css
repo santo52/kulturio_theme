@@ -168,6 +168,11 @@ html {
   font-family: "Roboto Mono", monospace;
   margin-top: 0 !important;
 }
+@media only screen and (min-width: 400px) {
+  html {
+    font-size: 16px;
+  }
+}
 
 /**
  * Relax the definition a bit, to allow components to override it manually.
@@ -177,16 +182,11 @@ html {
 }
 
 body {
-  font-size: 14px;
   font-weight: normal;
   color: #fff;
   text-align: left;
   background-color: #000;
-}
-@media only screen and (min-width: 400px) {
-  body {
-    font-size: 16px;
-  }
+  font-size: 14px;
 }
 
 h1,
@@ -263,6 +263,11 @@ main > * {
 .icon img {
   height: 100%;
   width: auto;
+}
+
+.post-thumbnail {
+  max-height: 50vh;
+  overflow: hidden;
 }
 
 .btn {
@@ -505,6 +510,9 @@ main > * {
   top: 0;
 }
 
+.fixed-header .kulturio-header .static-header {
+  visibility: hidden;
+}
 .fixed-header .kulturio-header .sticky-header {
   top: 0;
 }
@@ -525,9 +533,14 @@ main > * {
   height: 100%;
 }
 .home-video video {
-  max-height: 100vh;
   height: 100%;
   width: auto;
+}
+@media only screen and (min-width: 1024px) {
+  .home-video video {
+    width: 100%;
+    height: auto;
+  }
 }
 
 .intro {
@@ -868,6 +881,63 @@ main > * {
   width: 4rem;
 }
 
+.about {
+  padding: 3rem;
+  text-align: center;
+  max-width: 70rem;
+  margin: auto;
+}
+.about-logo {
+  max-width: 12.5rem;
+  width: 70%;
+  margin: auto;
+}
+.about-content {
+  margin: 2rem auto;
+}
+.about-content-text p {
+  margin-bottom: 1rem;
+}
+.about-arrow {
+  width: 1rem;
+  margin: auto;
+}
+.about-ceo {
+  margin-bottom: 2rem;
+}
+.about-ceo-text {
+  margin-top: 1rem;
+}
+.about-ceo-photo {
+  height: 17rem;
+  width: 17rem;
+  margin: auto;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+}
+
+@media only screen and (min-width: 822px) {
+  .about-logo {
+    max-width: 23rem;
+  }
+  .about-divided {
+    display: flex;
+  }
+  .about-divided .about-content-text {
+    text-align: left;
+  }
+  .about-divided .about-content-text {
+    text-align: left;
+  }
+  .about-divided .about-ceo {
+    width: 50%;
+    padding-right: 1rem;
+  }
+  .about-divided .about-content-text {
+    width: 50%;
+  }
+}
 .footer {
   position: relative;
   padding-bottom: 5rem;

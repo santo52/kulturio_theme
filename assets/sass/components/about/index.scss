@@ -1,0 +1,69 @@
+.about {
+    padding: 3rem;
+    text-align: center;
+    max-width: 70rem;
+    margin: auto;
+    &-logo {
+        max-width: 12.5rem;
+        width: 70%;
+        margin: auto;
+    }
+
+    &-content {
+        margin: 2rem auto;
+        &-text p {
+            margin-bottom: 1rem;
+        }
+    }
+
+    &-arrow {
+        width: 1rem;
+        margin: auto;
+    }
+
+    &-ceo {
+        margin-bottom: 2rem;
+        &-text{
+            margin-top: 1rem;
+        }
+        &-photo {
+            height: 17rem;
+            width: 17rem;
+            margin: auto;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+        }
+    }
+}
+
+@include media(desktop) {
+    .about {
+        $self: &;
+        &-logo {
+            max-width: 23rem;
+        }
+
+        &-divided {
+            display: flex;
+            #{$self}-content-text {
+                text-align: left;
+            }
+
+            #{$self}-content-text {
+                text-align: left;
+            }
+
+            #{$self}-ceo {
+                width: 50%;
+                padding-right: 1rem;
+            }
+
+            #{$self}-content-text {
+                width: 50%;
+            }
+        }
+
+        
+    }
+}

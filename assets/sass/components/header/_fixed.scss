@@ -1,4 +1,7 @@
 .fixed-header .kulturio-header {
+    .static-header {
+      visibility: hidden;
+    }
     .sticky-header {
       top: 0;
     }

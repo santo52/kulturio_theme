@@ -42,6 +42,11 @@
     font-family: $font-family;
     //  line-height: var(--global--line-height-body);
     margin-top: 0 !important;
+
+    
+    @include media(small-mobile) {
+      font-size: 16px;
+   }
  }
  
  /**
@@ -58,14 +63,13 @@
  
  // body resets
  body {
-    font-size: 14px;
+    
     font-weight: normal;
     color: $white;
     text-align: left;
     background-color: $black;
-    @include media(small-mobile) {
-        font-size: 16px;
-    }
+    font-size: 14px;
+    
  }
 
  h1,
@@ -173,6 +177,13 @@
       width: auto;
    }
 }
+
+
+.post-thumbnail {
+   max-height: 50vh;
+   overflow: hidden;
+}
+
 
 //  .slide {
 //     transition: transform .5s;
