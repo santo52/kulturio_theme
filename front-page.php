@@ -120,7 +120,7 @@ $iconsService = [
         </div>
     </section>
     <?php if($backgroundImage): ?>
-        <div class="background-fixed" style="background-image: url(<?= $backgroundImage['url'] ?>)"></div>
+        <div class="background-fixed" style="background-image: url(<?= $backgroundImage['sizes']['large'] ?>)"></div>
     <?php endif; ?>
     <section class="section-block services padding-top">
         <div class="services-title">

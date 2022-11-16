@@ -8,7 +8,7 @@ function kulturai_the_logo( $type ) {
     $logo = get_theme_mod("logo_{$type}");
 
     if($logo) {
-        $logoImage = wp_get_attachment_image($logo, 'full');
+        $logoImage = wp_get_attachment_image($logo, 'medium');
     } else {
         $logoImage = "<img src='{$baseURL}/assets/images/logo-{$type}.svg' alt='default logo {$type}' />";
     }
@@ -39,6 +39,8 @@ function kulturai_the_author_name() {
 
     $firstName = get_the_author_meta('user_firstname');
     $lastName = get_the_author_meta('user_lastname');
+
+    if(!$firstName && !$lastName) echo "Anonimo";
     
     if($firstName) echo $firstName;
 
