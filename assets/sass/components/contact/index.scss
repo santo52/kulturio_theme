@@ -1,0 +1,29 @@
+.contact {
+    max-width: 70rem;
+    margin: auto;
+    
+    &-title {
+        width: 4rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        h2 {
+            color: $mandy;
+            text-align: center;
+        }
+    }
+
+    &-description {
+        text-align: center;
+        display: block;
+        width: 19rem;
+        margin: 1rem auto;
+        font-weight: 300;
+    }
+
+    &-form {
+        max-width: 19rem;
+        margin: auto;
+        padding: 1rem;
+    }
+}

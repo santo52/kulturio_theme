@@ -1,12 +1,54 @@
 
 
-var $ = jQuery;
+(function($){
 
-// $( window ).load(function() { {
-//    $( '#home-video' )[0].play()
-// } });
+
+
 
 $(document).ready(() => {
+
+  $.fn.ajaxForm = function(obj) {
+    const disableSubmitButton = (bool) =>  $(obj.target).find('input[type=submit]').prop('disabled', bool);
+
+    $.ajax({
+      ...obj,
+      enctype: 'multipart/form-data',
+      processData: false,
+      contentType: false,
+      cache: false,
+      beforeSend: function(){
+      disableSubmitButton(true);
+      },
+      success: function(res){
+        try {
+          const json = JSON.parse(res);
+          obj.success && obj.success(json);
+        } catch(e) {
+          obj.success && obj.success(res);
+        } finally {
+          disableSubmitButton(false);
+        }
+      },
+      error: function(err){
+        obj.error && obj.success(err);
+        disableSubmitButton(false);
+      },
+    })
+  }
+
+  $.fn.show = function(time = 5000) {
+    if($(this).hasClass('alert')) {
+      $(this).removeClass('alert--open');
+      $(this).removeClass('alert--close');
+  
+      $(this).addClass('alert--open');
+      setTimeout(() => {
+        $(this).addClass('alert--close');
+        $(this).removeClass('alert--open');
+      }, time)
+    }
+  }
+
 
     $('.hamburguer-menu').click(() => {
         $('.mobile-menu .modal').addClass('modal--show')
@@ -26,8 +68,33 @@ $(document).ready(() => {
       onScrollHeader();
       onScrollSubscription();
     })
-})
 
+
+    $
+
+
+    $('.contact-form form').on('submit', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      
+      const formData = new FormData(e.target);
+      formData.append('action', 'kulturai_ajax_contact_form')
+      
+       $.fn.ajaxForm({
+         target: e.taget,
+         url : kulturai_vars.ajaxurl,
+         type: 'post',
+         data: formData,
+         success: function(res){
+            if(res.saved) {
+              $('.alert').show();
+              $(e.target)[0].reset();
+            }
+         },
+      })
+  })
+})
 
 
 function onScrollSubscription() {
@@ -190,3 +257,6 @@ function touchStart(index) {
     }
   }
 }
+
+
+})(jQuery);

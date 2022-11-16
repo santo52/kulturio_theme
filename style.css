@@ -277,8 +277,9 @@ main > * {
   padding: 0.7rem 3rem;
   width: 100%;
   font-weight: bold;
-  font-size: 1.3rem;
+  font-size: 1rem;
   border-radius: 2rem;
+  cursor: pointer;
 }
 .btn-red {
   color: #fff;
@@ -460,6 +461,46 @@ main > * {
     width: 100% !important;
     display: block;
   }
+}
+
+.kulturai-form-group {
+  margin: 0.5rem 1rem;
+}
+.kulturai-form-control {
+  width: 100%;
+  border: 0;
+  outline: 0;
+}
+.kulturai-form textarea,
+.kulturai-form input[type=text],
+.kulturai-form input[type=email],
+.kulturai-form input[type=number] {
+  padding: 0.4rem 1rem;
+  border-radius: 1rem;
+  font-size: 1rem;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 200;
+}
+
+.alert {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+  transition: height 1s, padding 1s, opacity 1s;
+  height: 0;
+  padding: 0 10px;
+  opacity: 1;
+}
+.alert--open {
+  height: 50px;
+  padding: 5px 10px;
+}
+.alert--close {
+  opacity: 0;
+}
+.alert-success {
+  background: #61b393;
 }
 
 .kulturio-header {
@@ -1015,6 +1056,33 @@ main > * {
   width: 6rem !important;
   height: auto !important;
   opacity: 0.3;
+}
+
+.contact {
+  max-width: 70rem;
+  margin: auto;
+}
+.contact-title {
+  width: 4rem;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.contact-title h2 {
+  color: #d53e4f;
+  text-align: center;
+}
+.contact-description {
+  text-align: center;
+  display: block;
+  width: 19rem;
+  margin: 1rem auto;
+  font-weight: 300;
+}
+.contact-form {
+  max-width: 19rem;
+  margin: auto;
+  padding: 1rem;
 }
 
 .singular {

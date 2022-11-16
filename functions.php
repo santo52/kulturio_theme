@@ -14,6 +14,8 @@
 
  require get_template_directory() . '/inc/custom-admin.php';
 
+ require get_template_directory() . '/inc/contact-cpt.php';
+
 
 function kulturai_menus() {
     register_nav_menus(array(
@@ -27,7 +29,10 @@ add_action( 'init', 'kulturai_menus' );
 
 
 function kulturai_enqueue_scripts() {
-    wp_enqueue_script('kulturai', get_stylesheet_directory_uri().'/assets/js/kulturai.js', array('jquery'));
+    wp_register_script('kulturai_script',get_stylesheet_directory_uri(). '/assets/js/kulturai.js', array('jquery'), '1', true );
+    wp_enqueue_script('kulturai_script');
+
+    wp_localize_script('kulturai_script','kulturai_vars',['ajaxurl'=>admin_url('admin-ajax.php')]);
 }
 
 add_action('wp_enqueue_scripts', 'kulturai_enqueue_scripts');
@@ -38,6 +43,7 @@ function kulturai_theme_setup() {
     add_theme_support( 'post-thumbnails' );
 }
 add_action( 'after_setup_theme', 'kulturai_theme_setup' );
+
 
 // function kulturai_widgets() {
 //     register_sidebar(array(

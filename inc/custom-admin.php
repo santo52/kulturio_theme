@@ -3,30 +3,72 @@
 function kulturai_customize_register( $wp_customize ) {
     $wp_customize->remove_control('site_icon');
 
-    $images = [
-        [ "key" => 'logo_mobile', "label"  => __( 'Logo mobile' ) ],
-        [ "key" => 'logo_desktop', "label"  => __( 'Logo desktop' ) ],
-    ];
+    $wp_customize->add_setting(
+        'email_contact',
+        array(
+            'capability'        => 'edit_theme_options',
+            'transport'         => 'postMessage',
+        )
+    );
 
-
-    foreach ($images as $image) {
-        $wp_customize->add_setting(
-            $image['key'],
-            array(
-                'capability'        => 'edit_theme_options',
-                'transport'         => 'postMessage',
-            )
-        );
-
-        $wp_customize->add_control( new WP_Customize_Cropped_Image_Control( $wp_customize, $image['key'], array(
+    $wp_customize->add_control(
+        'email_contact',
+        array(
+            'type'        => 'text',
             'section'     => 'title_tagline',
-            'label'       => $image['label'],
+            'label'       =>  __( 'Email de contacto' ),
             'flex_width'  => true, // Allow any width, making the specified value recommended. False by default.
-            'flex_height' => true, // Require the resulting image to be exactly as tall as the height attribute (default).
-            // 'width'       => 1500,
-            // 'height'      => 1500,
-        ) ) );
-    }
+            'flex_height' => true, // Require the res
+        )
+    );
+
+    $wp_customize->add_setting(
+        'linkedin_link',
+        array(
+            'capability'        => 'edit_theme_options',
+            'transport'         => 'postMessage',
+        )
+    );
+
+    $wp_customize->add_control(
+        'linkedin_link',
+        array(
+            'type'        => 'text',
+            'section'     => 'title_tagline',
+            'label'       =>  __( 'Linkedin link' ),
+            'flex_width'  => true, // Allow any width, making the specified value recommended. False by default.
+            'flex_height' => true, // Require the res
+        )
+    );
+
+    // $images = [
+    //     [ "key" => 'logo_mobile', "label"  => __( 'Logo mobile' ) ],
+    //     [ "key" => 'logo_desktop', "label"  => __( 'Logo desktop' ) ],
+    // ];
+
+
+    // foreach ($images as $image) {
+    //     $wp_customize->add_setting(
+    //         $image['key'],
+    //         array(
+    //             'capability'        => 'edit_theme_options',
+    //             'transport'         => 'postMessage',
+    //         )
+    //     );
+
+    //     $wp_customize->add_control( new WP_Customize_Cropped_Image_Control( $wp_customize, $image['key'], array(
+    //         'section'     => 'title_tagline',
+    //         'label'       => $image['label'],
+    //         'flex_width'  => true, // Allow any width, making the specified value recommended. False by default.
+    //         'flex_height' => true, // Require the resulting image to be exactly as tall as the height attribute (default).
+    //         // 'width'       => 1500,
+    //         // 'height'      => 1500,
+    //     ) ) );
+    // }
+
+
+    
+
 }
 add_action( 'customize_register', 'kulturai_customize_register' );
 

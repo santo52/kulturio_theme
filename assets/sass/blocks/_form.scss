@@ -1,0 +1,22 @@
+.kulturai-form {
+    &-group {
+        margin: 0.5rem 1rem;
+    }
+
+    &-control {
+        width: 100%;
+        border: 0;
+        outline: 0;
+    }
+
+    textarea,
+    input[type=text],
+    input[type=email],
+    input[type=number], {
+        padding: 0.4rem 1rem;
+        border-radius: 1rem;
+        font-size: 1rem;
+        font-family: $font-family;
+        font-weight: 200;
+    }
+}

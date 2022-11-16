@@ -11,12 +11,14 @@
                                 <?= bloginfo("description") ?>
                             </div>
                             <div class="footer-section footer-contact">
-                                <div class="footer-item">
-                                    <span class="icon">
-                                        <img src="<?= get_template_directory_uri(); ?>/assets/images/icons/email.svg" alt="email">
-                                    </span>
-                                    <a class="footer-item-text" href="mailito:info@kultur.ai">info@kultur.ai</a>
-                                </div>
+                                <?php if(get_theme_mod("email_contact")) : ?>
+                                    <div class="footer-item">
+                                        <span class="icon">
+                                            <img src="<?= get_template_directory_uri(); ?>/assets/images/icons/email.svg" alt="email">
+                                        </span>
+                                        <a class="footer-item-text" href="mailito:<?=get_theme_mod("email_contact");?>"><?=get_theme_mod("email_contact");?></a>
+                                    </div>
+                                <?php endif; ?>
                                 <div class="footer-item">
                                     <span class="icon">
                                         <img src="<?= get_template_directory_uri(); ?>/assets/images/icons/location.svg" alt="location">
@@ -39,11 +41,13 @@
                         </div>
                         <div class="footer-section footer-social-media">
                             <span class="footer-item-text display-block">Síguenos en</span>
-                            <div class="icon">
-                                <a href="https://www.linkedin.com/company/kultur-patterns" target="_blank">
-                                    <img src="<?= get_template_directory_uri(); ?>/assets/images/icons/linkedin.svg" alt="location" />
-                                </a>
-                            </div>
+                            <?php if(get_theme_mod("linkedin_link")) : ?>
+                                <div class="icon">
+                                    <a href="<?= get_theme_mod("linkedin_link"); ?>" target="_blank">
+                                        <img src="<?= get_template_directory_uri(); ?>/assets/images/icons/linkedin.svg" alt="location" />
+                                    </a>
+                                </div>
+                            <?php endif; ?>
                         </div>
                         <div class="footer-mobile-bolo">
                             <img src="<?= get_template_directory_uri(); ?>/assets/images/icons/bolo_rojo.svg" alt="bolo rojo">

@@ -22,7 +22,7 @@ add_filter( 'the_logo', 'kulturai_the_logo' );
 function kulturai_the_thumbnail( $type ) {
  
     if ( has_post_thumbnail() ) {
-        $url = get_the_post_thumbnail_url( null, 'full' );
+        $url = get_the_post_thumbnail_url( null, 'large' );
         // echo "<div class='post-thumbnail' style='background-image: url({$url})'></div>";
         echo "<div class='post-thumbnail'><img src='{$url}' /></div>";
     }

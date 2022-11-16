@@ -1,0 +1,23 @@
+.alert {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    transition: height 1s, padding 1s, opacity 1s;
+    height: 0;
+    padding: 0 10px;
+    opacity: 1;
+
+    &--open {
+        height: 50px;
+        padding: 5px 10px;
+    }
+
+    &--close {
+        opacity: 0;
+    }
+
+    &-success {
+        background: #61b393;
+    }
+}
