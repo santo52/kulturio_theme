@@ -1,5 +1,5 @@
 
-<section class="contact">
+<section class="contact padding-top">
 
     <div class="contact-title">
         <img src="<?= get_template_directory_uri(); ?>/assets/images/icons/lapiz.svg" alt="icon blog">
@@ -25,7 +25,7 @@
                 <textarea required name="message" rows="5" placeholder="Mensaje" class="kulturai-form-control"></textarea>
             </div>
             <div>
-                <input type="submit" placeholder="Asunto" class="btn btn-red" />
+                <input type="submit" class="btn btn-red" />
             </div>
         </form>
     </div>

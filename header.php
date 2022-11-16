@@ -44,6 +44,18 @@
                 </div>
             </div>
         </div>
+
+        <div id="resource-modal" class="resource-modal modal modal--right modal--dark modal--show">
+            <div class="modal-background">
+                <img src="<?= get_template_directory_uri(); ?>/assets/images/close.png" alt="close button">
+            </div>
+            
+            <div class="modal-content">
+                <div class="modal-body">
+                    <?php get_template_part('template-parts/resource-form') ?>
+                </div>
+            </div>
+        </div>
         
 
         <main class="container">

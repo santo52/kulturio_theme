@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 
-<section class="blog">
+<section class="blog padding-top">
 
     <div class="blog-title">
         <img src="<?= get_template_directory_uri(); ?>/assets/images/icons/hoja_roja.svg" alt="icon blog">

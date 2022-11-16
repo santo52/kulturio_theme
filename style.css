@@ -379,6 +379,11 @@ main > * {
 .modal--left .modal-content, .modal--right .modal-content {
   max-width: 19rem;
 }
+@media only screen and (min-width: 822px) {
+  .modal--left .modal-content, .modal--right .modal-content {
+    max-width: 25rem;
+  }
+}
 .modal--left {
   transition: right 0.3s ease-out;
   flex-direction: row-reverse;
@@ -454,7 +459,7 @@ main > * {
   }
   #subscription-modal .modal-content {
     border-radius: 0;
-    max-width: 19rem;
+    max-width: 25rem;
   }
   #subscription-modal .modal-header {
     display: none;
@@ -471,7 +476,7 @@ main > * {
 }
 
 .kulturai-form-group {
-  margin: 0.5rem 1rem;
+  margin: 1rem;
 }
 .kulturai-form-control {
   width: 100%;
@@ -1005,7 +1010,8 @@ main > * {
   text-align: center;
   display: block;
   width: 17rem;
-  margin: 1rem auto;
+  margin: 0 auto 0;
+  padding-top: 1rem;
   font-weight: 300;
 }
 .blog-list {
@@ -1067,7 +1073,9 @@ main > * {
 
 .contact {
   max-width: 70rem;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 22rem;
 }
 .contact-title {
   width: 4rem;
@@ -1083,11 +1091,11 @@ main > * {
   text-align: center;
   display: block;
   max-width: 19rem;
-  margin: 1rem auto;
+  margin: 0 auto 0;
+  padding-top: 1rem;
   font-weight: 300;
 }
 .contact-form {
-  max-width: 19rem;
   margin: auto;
   padding: 1rem;
 }
@@ -1097,14 +1105,56 @@ main > * {
   cursor: pointer;
 }
 
-.contact-modal .modal-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 25rem;
-}
 .contact-modal .contact-form {
   max-width: 100%;
+}
+
+.resources {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+.resources-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  height: 250px;
+  width: 100%;
+}
+.resources-image img {
+  position: absolute;
+  bottom: 0;
+}
+.resources-image:after {
+  content: "";
+  background: black;
+  height: 26px;
+  display: block;
+  width: 100%;
+  position: absolute;
+  bottom: -13px;
+  border-radius: 50%;
+}
+.resources-content {
+  padding-top: 250px;
+}
+.resources-description {
+  text-align: center;
+  display: block;
+  max-width: 12rem;
+  margin: 0 auto 0;
+  padding-top: 1rem;
+  font-weight: 300;
+}
+.resources-form {
+  max-width: 22rem;
+  margin: auto;
+  padding: 1rem;
+}
+
+.resource-modal .modal-content {
+  padding: 0;
 }
 
 .singular {
@@ -1146,6 +1196,7 @@ main > * {
 }
 .footer-item {
   line-height: 1.7;
+  white-space: nowrap;
 }
 .footer-item a {
   text-decoration: none;

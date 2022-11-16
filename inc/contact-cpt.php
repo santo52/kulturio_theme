@@ -92,7 +92,7 @@ function kulturai_ajax_contact_form() {
 	$post_id = wp_insert_post([
 		'post_title'	=>'Mensaje de '. $name,
 		'post_type'		=>'contact_post_type',
-		'post_status' 	=> 'private',
+		'post_status' 	=> 'publish',
 		'post_content'	=> $message,
 		'meta_input' => array(
 			'contact_cpt_name' => $name,

@@ -40,6 +40,9 @@
   &--right {
     #{$self}-content {
       max-width: 19rem;
+      @include media(desktop) {
+        max-width: 25rem;
+      }
     }
   }
 
