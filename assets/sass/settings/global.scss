@@ -45,7 +45,11 @@
 
     
     @include media(small-mobile) {
-      font-size: 16px;
+      font-size: 1rem;
+   }
+
+   @include media(big) {
+      font-size: 1.5rem;
    }
  }
  
@@ -68,7 +72,6 @@
     color: $white;
     text-align: left;
     background-color: $black;
-    font-size: 14px;
     
  }
 
@@ -81,40 +84,46 @@
     font-family: $h-font-family;
  }
 
- h1 {
+ a,p,span,div {
+   font-size: 1rem;
+ }
+
+ h1, h1 * {
     font-size: 2rem;
  }
 
- h2 {
+ h2, h2 * {
     font-size: 1.6rem;
  }
 
- h3 {
+ h3, h3 *  {
     font-size: 1.3rem;
  }
 
 
- h4 {
+
+ h4, h4 *  {
     font-size: 1.2rem;
  }
 
 
- h5 {
+
+ h5, h5 *  {
     font-size: 1.1rem;
  }
 
 
- h6 {
+ h6, h6 *  {
     font-size: 1rem;
  }
 
 
  @include media(desktop) {
-   h1 {
+   h1, h1 * {
       font-size: 2.5rem;
    }
   
-   h2 {
+   h2, h2 * {
       font-size: 1.9rem;
    }
   

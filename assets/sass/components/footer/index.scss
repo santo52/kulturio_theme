@@ -1,9 +1,11 @@
 .footer {
     position: relative;
-    padding-bottom: 5rem;
+    padding-bottom: 7rem;
 
     @include media(desktop) {
         padding-bottom: 2rem;
+        max-width: 81rem;
+        margin: 0 auto 3rem;
     }
 
     &-org-info {
@@ -24,9 +26,12 @@
         }
     }
 
-    &-contact,
     &-social-media {
         padding-left: 0.5rem;
+    }
+
+    &-contact {
+        padding-left: 1rem;
     }
 
     &-social-media .icon {
@@ -35,16 +40,18 @@
     }
 
     &-mobile-bolo {
-        display: none;
         position: absolute;
         bottom: 0;
         right: 0;
         img {
-            margin-left: 40%;
+            margin-left: 60%;
         }
 
-        @include media(mobile) {
+        @include media(small-mobile) {
             display: block;
+            img {
+                margin-left: 40%;
+            }
         }
 
         @include media(laptop) {

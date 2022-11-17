@@ -2,6 +2,13 @@
 
 (function($){
 
+function downloadURI(uri, name) {
+    var link = document.createElement("a");
+    link.download = name;
+    link.href = uri;
+    link.click();
+}
+
 function resizeResourceImage() {
   $resourceImage = $('.resources-image').eq(0);
   if($resourceImage) {
@@ -115,7 +122,8 @@ $(document).ready(() => {
               }
               $(e.target)[0].reset();
               if(res.resource) {
-                window.open('http://localhost/wp-content/uploads/2022/11/84294797_20221101.pdf', '_blank')
+                
+                downloadURI(res.resource, 'file')
               }
             }
          },

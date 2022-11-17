@@ -11,21 +11,34 @@
         padding-top: 6rem;
     }
 
+    &-title {
+        max-width: 40rem;
+        margin: auto;
+    }
+
     &-table {
+        max-width: 18rem;
+        margin: auto;
         @include media(laptop) {
             display: flex;
             justify-content: space-around;
-            margin-top: 3rem;
+            max-width: 81rem;
+            margin: 3rem auto;
         }
     }
 
     &-table-row {
         flex-basis: 33.33%;
-        margin-right: 2rem;
         margin-top: 3rem;
-        &:last-child {
-            margin-right: 0;
+        
+        @include media(laptop) {
+            margin-right: 2rem;
+            &:last-child {
+                margin-right: 0;
+            }
         }
+
+        
         img {
             width: 4rem;
         }

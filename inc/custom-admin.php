@@ -1,13 +1,14 @@
 <?php 
 
-function kulturai_customize_register( $wp_customize ) {
+add_action( 'customize_register', 'kulturai_edit_theme_options_register' );
+function kulturai_edit_theme_options_register($wp_customize) {
     $wp_customize->remove_control('site_icon');
 
     $wp_customize->add_setting(
         'email_contact',
         array(
             'capability'        => 'edit_theme_options',
-            'transport'         => 'refresh',
+            'transport'         => 'postMessage',
         )
     );
 
@@ -22,8 +23,24 @@ function kulturai_customize_register( $wp_customize ) {
         )
     );
 
+
+    $wp_customize->add_panel( 'kulturai_theme_options', 
+    array(
+            'title'            => __( 'Configuraciones Kultur', 'kulturai' ),
+            'description'      => __( 'Lista de configuraciones del tema', 'kulturai' ),
+        ) 
+    );
+
+    $wp_customize->add_section( 'kulturai_linkedin_options', 
+        array(
+            'title'         => __( 'Linkedin', 'kulturai' ),
+            'priority'      => 1,
+            'panel'         => 'kulturai_theme_options'
+        ) 
+    );
+
     $wp_customize->add_setting(
-        'linkedin_link',
+        'kulturai_linkedin_link',
         array(
             'capability'        => 'edit_theme_options',
             'transport'         => 'postMessage',
@@ -31,30 +48,37 @@ function kulturai_customize_register( $wp_customize ) {
     );
 
     $wp_customize->add_control(
-        'linkedin_link',
+        'kulturai_linkedin_link',
         array(
             'type'        => 'text',
-            'section'     => 'title_tagline',
+            'section'     => 'kulturai_linkedin_options',
             'label'       =>  __( 'Linkedin link' ),
             'flex_width'  => true, // Allow any width, making the specified value recommended. False by default.
             'flex_height' => true, // Require the res
         )
     );
 
-    $wp_customize->add_panel( 'kulturai_form_options', 
-    array(
-            //'priority'       => 100,
-            'title'            => __( 'Formularios', 'kulturai' ),
-            'description'      => __( 'Lista de formularios del tema', 'kulturai' ),
-        ) 
+    $wp_customize->add_setting( 'kulturai_linkedin_tag',
+        array('transport'         => 'postMessage')
     );
 
-    // Text Options Section Inside Theme
+    $wp_customize->add_control( 
+        'kulturai_linkedin_tag', 
+        array(
+            'type'        => 'text',
+            'section'     => 'kulturai_linkedin_options',
+            'label'       =>  __( 'Linkedin Partner ID', 'kulturai' ),
+            'flex_width'  => true, // Allow any width, making the specified value recommended. False by default.
+            'flex_height' => true, // Require the res
+        )
+    );
+
+
     $wp_customize->add_section( 'kulturai_resources_options', 
         array(
             'title'         => __( 'Formulario de Recursos', 'kulturai' ),
             'priority'      => 1,
-            'panel'         => 'kulturai_form_options'
+            'panel'         => 'kulturai_theme_options'
         ) 
     );
 
@@ -77,7 +101,7 @@ function kulturai_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'kulturai_resources_title',
         array(
             'default'      => __( '¿Conoces realmente a tu consumidor?', 'kulturai' ),
-            'transport'         => 'refresh'
+            'transport'         => 'postMessage'
         )
     );
 
@@ -95,7 +119,7 @@ function kulturai_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'kulturai_resources_text',
         array(
             'default'      => __( 'Descarga un template que puede ayudarte', 'kulturai' ),
-            'transport'         => 'refresh'
+            'transport'         => 'postMessage'
         )
     );
 
@@ -114,7 +138,7 @@ function kulturai_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'kulturai_resources_button_text',
         array(
             'default'      => __( 'Descargar recurso', 'kulturai' ),
-            'transport'         => 'refresh'
+            'transport'         => 'postMessage'
         )
     );
 
@@ -144,19 +168,8 @@ function kulturai_customize_register( $wp_customize ) {
             'settings'   => 'kulturai_resources_file',
         ) ) 
     );
-
-    
-
-    // // Setting for Copyright text.
-    // $wp_customize->add_setting( 'nd_dosth_copyright_text2',
-    //     array(
-    //         'default'           => __( 'All rights reserved ', 'nd_dosth' ),
-    //         'sanitize_callback' => 'sanitize_text_field',
-    //         'transport'         => 'refresh',
-    //     )
-    // );
 }
-add_action( 'customize_register', 'kulturai_customize_register' );
+
 
 
 

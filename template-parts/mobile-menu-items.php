@@ -1,6 +1,6 @@
 <div class="modal modal--right">
     <div class="modal-background">
-        <img src="<?= get_template_directory_uri(); ?>/assets/images/close.png" alt="close button">
+        <img src="<?= get_template_directory_uri(); ?>/assets/images/icons/close.svg" alt="close button">
     </div>
     
     <div class="modal-content">

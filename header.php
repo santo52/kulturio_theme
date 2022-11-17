@@ -20,7 +20,7 @@
 
         <div id="subscription-modal" class="subscription-modal modal modal--bottom modal--round">
             <div class="modal-background">
-                <img src="<?= get_template_directory_uri(); ?>/assets/images/close.png" alt="close button">
+                <img src="<?= get_template_directory_uri(); ?>/assets/images/icons/close.svg" alt="close button">
             </div>
             
             <div class="modal-content">
@@ -35,7 +35,7 @@
 
         <div id="contact-modal" class="contact-modal modal modal--right modal--dark">
             <div class="modal-background">
-                <img src="<?= get_template_directory_uri(); ?>/assets/images/close.png" alt="close button">
+                <img src="<?= get_template_directory_uri(); ?>/assets/images/icons/close.svg" alt="close button">
             </div>
             
             <div class="modal-content">
@@ -47,7 +47,7 @@
 
         <div id="resource-modal" class="resource-modal modal modal--right modal--dark">
             <div class="modal-background">
-                <img src="<?= get_template_directory_uri(); ?>/assets/images/close.png" alt="close button">
+                <img src="<?= get_template_directory_uri(); ?>/assets/images/icons/close.svg" alt="close button">
             </div>
             
             <div class="modal-content">

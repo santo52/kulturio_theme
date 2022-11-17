@@ -14,6 +14,7 @@ $breakpoint_md: 592px;
 $breakpoint_lg: 652px;
 $breakpoint_xl: 822px;
 $breakpoint_xxl: 1024px;
+$breakpoint_big: 1500px;
 
 // Responsive breakpoints mixin
 @mixin media( $res ) {
@@ -86,6 +87,18 @@ $breakpoint_xxl: 1024px;
 
 	@if wide == $res {
 		@media only screen and (min-width: #{$breakpoint_xxl}) {
+			@content;
+		}
+	}
+
+	@if big-only == $res {
+		@media only screen and (max-width: #{$breakpoint_big - 1}) {
+			@content;
+		}
+	}
+
+	@if big == $res {
+		@media only screen and (min-width: #{$breakpoint_big}) {
 			@content;
 		}
 	}

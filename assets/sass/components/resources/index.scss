@@ -10,7 +10,7 @@
         top: 0;
         left: 0;
         overflow: hidden;
-        height: 250px;
+        height: 16.25rem;
         width: 100%;
 
         img {
@@ -21,17 +21,17 @@
         &:after {
             content: "";
             background: black;
-            height: 26px;
+            height: 1.625rem;
             display: block;
             width: 100%;
             position: absolute;
-            bottom: -13px;
+            bottom: -0.8125;
             border-radius: 50%;
         }
     }
 
     &-content {
-        padding-top: 250px;
+        padding-top: 15.625rem;
     }
 
     &-description {

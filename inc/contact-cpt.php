@@ -93,11 +93,11 @@ function kulturai_ajax_contact_form() {
 		'post_title'	=>'Mensaje de '. $name,
 		'post_type'		=>'contact_post_type',
 		'post_status' 	=> 'publish',
-		'post_content'	=> $message,
 		'meta_input' => array(
 			'contact_cpt_name' => $name,
 			'contact_cpt_email' => $email,
 			'contact_cpt_subject' => $subject,
+			'contact_cpt_message' => $message,
 		)
 	]);
 

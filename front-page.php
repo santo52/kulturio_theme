@@ -35,8 +35,10 @@ $iconsService = [
 <?php if($intro): ?>
     <section class="section-block padding-top intro">
         <div class="home-video">
-            <video id="home-video" src="<?= get_template_directory_uri() . '/assets/images/red.webm' ?>" autoplay muted loop playsinline>
-            </video>
+            <div class="home-video-content">
+                <video id="home-video" src="<?= get_template_directory_uri() . '/assets/images/red.webm' ?>" autoplay muted loop playsinline>
+                </video>
+            </div>
         </div>
         <div class="intro-info">
             <div class="intro-icon">
@@ -65,7 +67,7 @@ $iconsService = [
         <div class="whoarewe-text">
             <?= $intro['first_text'] ?>
         </div>
-        <div class="whoarewe-slide">
+        <div class="whoarewe-slide to-desktop">
             <span>
                 Desliza
                 <svg xmlns="http://www.w3.org/2000/svg" width="103.31" height="21.351" viewBox="0 0 103.31 21.351"><g transform="translate(-282.674 -1704.146)"><path d="M564.674,1747h92.281" transform="translate(-282 -32.5)" fill="none" stroke="#fff" stroke-width="1"/><path d="M656.954,1737.531l10.322,10.322-10.322,10.322" transform="translate(-282 -33.031)" fill="none" stroke="#fff" stroke-width="1"/></g></svg>

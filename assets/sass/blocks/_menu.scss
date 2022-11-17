@@ -2,6 +2,9 @@
 
 .mobile-menu .modal-content {
     background-color: $mandy;
+    .logo {
+        padding: 0.85rem 1rem;
+    }
 }
 
 .desktop-menu {
@@ -30,6 +33,7 @@
     li {
         align-items: center;
         display: flex;
+        margin-right: 0.5rem;
     }
 
     a {
@@ -54,6 +58,7 @@
     ul {
         display: flex;
         justify-content: flex-end;
+        margin-right: 0.5rem;
     }
 
     li.current-menu-item a{

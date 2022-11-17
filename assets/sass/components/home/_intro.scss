@@ -4,6 +4,8 @@
     justify-content: space-between;
     min-height: 37.5rem;
     background-color: transparent;
+    max-width: 75rem;
+    margin: auto;
 
     @include media(laptop) {
       margin-top: 2rem;
@@ -14,7 +16,7 @@
     &-info {
       display: flex;
       flex-direction: column;
-      height: calc(100vh - $items-section-separation - $header-height);
+      height: calc(100vh - $items-section-separation - $header-height - 2.5rem);
       justify-content: space-between;
       padding-bottom: 2rem;
   
@@ -32,7 +34,7 @@
     &-icon {
   
       margin: 0 auto;
-      max-width: 500px;
+      max-width: 31.25rem;
       width: 13rem;
   
       @include media(laptop) {
@@ -58,8 +60,9 @@
       position: relative;
       left: 50%;
       margin-left: -65%;
-      padding-top: 4rem;
+      padding-top: 2rem;
       background-color: $black;
+      max-width: 31.25rem;
   
       @include media(laptop) {
         flex-basis: 50%;
@@ -73,7 +76,7 @@
   .subscription-button-mobile {
     display: none;
     position: fixed;
-    padding: 1.5rem 2.5rem;
+    padding: 1rem;
     width: 100%;
     left: 0;
     z-index: 10;

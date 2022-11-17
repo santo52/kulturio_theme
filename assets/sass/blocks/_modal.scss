@@ -21,8 +21,7 @@
     flex-grow: 1;
 
     img {
-      width: 1rem;
-      display: none;
+      width: .8rem;
     }
   }
 
@@ -33,7 +32,7 @@
   }
 
   &-header {
-    height: 40px;
+    height: 2.5rem;
   }
 
   &--left, 
@@ -85,13 +84,14 @@
   &--dark {
     #{$self}-background {
       background-color: transparent;
+      img {
+        display: none;
+      }
     }
-
-
 
     #{$self}-content {
       background: $black;
-      border-left: 2px solid white;  
+      border-left: 0.125rem solid white;  
     }
   }
 }

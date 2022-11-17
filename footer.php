@@ -41,9 +41,9 @@
                         </div>
                         <div class="footer-section footer-social-media">
                             <span class="footer-item-text display-block">Síguenos en</span>
-                            <?php if(get_theme_mod("linkedin_link")) : ?>
+                            <?php if(get_theme_mod("kulturai_linkedin_link")) : ?>
                                 <div class="icon">
-                                    <a href="<?= get_theme_mod("linkedin_link"); ?>" target="_blank">
+                                    <a href="<?= get_theme_mod("kulturai_linkedin_link"); ?>" target="_blank">
                                         <img src="<?= get_template_directory_uri(); ?>/assets/images/icons/linkedin.svg" alt="location" />
                                     </a>
                                 </div>
@@ -55,6 +55,7 @@
                     </footer>
                 </main>
             </div>
+            
         <?php wp_footer(); ?>
     </body>
 </html>

@@ -4,6 +4,8 @@
     &-table {
         @include media(desktop) {
             display: flex;
+            max-width: 81rem;
+            margin: auto;
         }
 
         &-row {

@@ -33,11 +33,11 @@
   
     .sticky-header {
       background: $black;
-      height: 50px;
+      height: 3.125rem;
       left: 0;
       padding: 0 $header-parent-padding;
       position: fixed;
-      top: -50px;
+      top: -3.125rem;
       transition: top .5s;
       width: 100%;
       z-index: 999;

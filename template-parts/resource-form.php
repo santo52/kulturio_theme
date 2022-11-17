@@ -7,7 +7,9 @@
             <img src='<?= get_template_directory_uri(); ?>/assets/images/recursos.jpeg' />
         <?php endif; ?>
     </div>
-
+<?php
+    var_dump( get_theme_mod('kulturai_resources_title'));
+?>
     <div class="resources-content">
         <span class="resources-description">
             <h5><?= get_theme_mod('kulturai_resources_title'); ?></h5>
