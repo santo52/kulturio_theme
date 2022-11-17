@@ -52,7 +52,7 @@
 	],
 	"scripts": {
 		"start": "chokidar \"**/*.scss\" -c \"npm run build\" --initial",
-		"build:style": "sass assets/sass/style.scss:style.css --style=expanded --source-map",
+		"build:style": "sass assets/sass/style.scss:assets/css/style.css --style=compressed --source-map",
 		"build": "run-s \"build:*\"",
 		"watch": "chokidar \"assets/sass/**/*.scss\" -c \"npm run build\" --initial",
 		"lint:scss": "stylelint **/*.scss",

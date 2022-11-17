@@ -1,11 +1,3 @@
-/**
- * Responsive Styles
- */
-
-/**
- * Required Variables
- */
-
 $default_width: 610px;
 $max_content_width: 1240px;
 $breakpoint_xs: 400px;
@@ -15,8 +7,8 @@ $breakpoint_lg: 652px;
 $breakpoint_xl: 822px;
 $breakpoint_xxl: 1024px;
 $breakpoint_big: 1500px;
+$breakpoint_biggest: 4000px;
 
-// Responsive breakpoints mixin
 @mixin media( $res ) {
 
 	@if small-mobile-only == $res {
@@ -102,6 +94,20 @@ $breakpoint_big: 1500px;
 			@content;
 		}
 	}
+
+	@if biggest-only == $res {
+		@media only screen and (max-width: #{$breakpoint_biggest - 1}) {
+			@content;
+		}
+	}
+
+	@if biggest == $res {
+		@media only screen and (min-width: #{$breakpoint_biggest}) {
+			@content;
+		}
+	}
+
+	
 }
 
 // /**

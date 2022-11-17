@@ -20,12 +20,12 @@
 
         &:after {
             content: "";
-            background: black;
+            background: $black;
             height: 1.625rem;
             display: block;
             width: 100%;
             position: absolute;
-            bottom: -0.8125;
+            bottom: -0.8125rem;
             border-radius: 50%;
         }
     }

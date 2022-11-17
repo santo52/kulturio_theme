@@ -2,7 +2,6 @@
 
 add_action( 'customize_register', 'kulturai_edit_theme_options_register' );
 function kulturai_edit_theme_options_register($wp_customize) {
-    $wp_customize->remove_control('site_icon');
 
     $wp_customize->add_setting(
         'email_contact',

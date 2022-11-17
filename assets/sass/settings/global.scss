@@ -51,6 +51,10 @@
    @include media(big) {
       font-size: 1.5rem;
    }
+
+   @include media(biggest) {
+      font-size: 3rem;
+   }
  }
  
  /**
