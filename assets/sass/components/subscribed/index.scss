@@ -1,0 +1,50 @@
+.subscribed {
+    padding: 2rem;
+    &-logo {
+        margin-left: auto;
+        width: 15rem;
+    }
+
+    @include media(laptop) {
+        &-content {
+            * {
+                font-size: 1.2rem;
+            }
+        }
+    }
+   
+    @include media(desktop) {
+        &-main {
+            display: flex;
+            flex-direction: row-reverse;
+            margin-top: 4rem;
+            justify-content: space-around;
+        }
+    }
+    
+
+    &-container {
+        padding: 4rem 0 2rem 0;
+        max-width: 19rem;
+        @include media(mobile) {
+            padding: 4rem 2rem;
+            display: flex;
+            flex-direction: column;
+            max-width: 29rem;
+        }
+    }
+
+    &-title {
+        margin-bottom: 1.5rem;
+    }
+
+    &-image {
+        display: flex;
+        justify-content: center;
+        max-width: 20rem;
+        margin: auto;
+        @include media(laptop) {
+            margin: initial;
+        }
+    }
+}

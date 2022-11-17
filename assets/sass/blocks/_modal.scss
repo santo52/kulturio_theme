@@ -23,6 +23,13 @@
     img {
       width: .8rem;
     }
+
+    @include media(desktop) {
+      background-color: transparent;
+      img {
+        display: none;
+      }
+    }
   }
 
   &-content {
@@ -82,13 +89,6 @@
   }
 
   &--dark {
-    #{$self}-background {
-      background-color: transparent;
-      img {
-        display: none;
-      }
-    }
-
     #{$self}-content {
       background: $black;
       border-left: 0.125rem solid white;  

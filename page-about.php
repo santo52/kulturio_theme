@@ -1,3 +1,9 @@
+<?php 
+/*
+    Template Name: Página acerca de
+*/
+?>
+
 <?php get_header(); ?>
 
 <?php 

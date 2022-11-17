@@ -1,0 +1,47 @@
+.error {
+    font-weight: 300;
+    &-content {
+        margin: 3rem 2rem 0;
+        max-width: 19rem;
+    }
+
+    &-image {
+        max-width: 30rem;
+        width: 100%;
+        @include media(laptop) {
+            position: absolute;
+            right: 0;
+            bottom: -4rem;
+            z-index: -1;
+        }
+    }
+
+    &-title {
+        font-size: 1.6rem;
+        line-height: 1;
+    }
+
+    &-number {
+        font-size: 5.5rem;
+        font-weight: 100;
+    }
+
+    &-text {
+        margin-top: 2rem;
+    }
+
+    &-padding {
+        @include media(desktop) {
+            margin-left: 6rem;
+            position: absolute;
+            max-width: 20rem;
+            margin-top: 4rem;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: $green;
+        font-weight: bold;
+    }
+}

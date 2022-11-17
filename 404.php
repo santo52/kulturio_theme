@@ -1,17 +1,33 @@
-<?php get_header(); ?>
-
-<h2 style="text-align: center">
-    <span style="
-    display: block;
-    font-size: 10rem;
-    color: #d53e4f;">404</span>
-     PÁGINA NO ENCONTRADA
-</h2>
-<button style="
-    width: max-content;
-    margin: auto;
-    display: block;
-    margin-top: 4rem;" 
-    class="btn btn-red" onclick="window.location = '/'">Volver al inicio</button>
-
-<?php get_footer(); ?>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/css/style.css">
+        <?php wp_head(); ?>
+    </head>
+    <body>
+        <div class="subscribed-logo">
+            <?php apply_filters('the_logo', 'desktop'); ?>
+        </div>
+        <div class="error">
+            <div class="error-content">
+                <div class="error-title">
+                    !Error!
+                    <div class="error-number">404</div>
+                </div>
+                <div class="error-text">
+                    Existen 404 posibles razones por las cuales esta página no está donde debería estar...
+                </div>
+                <div class="error-text error-padding">
+                    - Sin problema, dirigete a nuestro sitio web haciendo <a href="/">click aquí</a>
+                </div>
+            </div>
+            <div class="error-image">
+                <img src="<?= get_template_directory_uri() ?>/assets/images/triste.svg" alt="error bolo">
+            </div>
+        </div>
+        <?php wp_footer(); ?>
+    </body>
+</html>

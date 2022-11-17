@@ -78,3 +78,9 @@
 .footer-curve.curve {
     transform: rotateX(180deg);
 }
+
+.footer-hidden {
+    .footer, .footer-curve {
+        display: none;
+    }
+}

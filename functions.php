@@ -88,20 +88,16 @@ function inject_linkedin_tag() {
 add_action( 'wp_footer', 'inject_linkedin_tag', 100 );
 
 
-// function kulturai_widgets() {
-//     register_sidebar(array(
-//         'name' => 'Menu Footer 1',
-//         'id' => 'footer_menu_1',
-//         'before_widget' => '<div class="footer-widget">',
-//         'after_widget' => '</div>',
-//     ));
-//     register_sidebar(array(
-//         'name' => 'Menu Footer 2',
-//         'id' => 'footer_menu_2',
-//     ));
-// }
+function kulturai_widgets() {
+    register_sidebar(array(
+        'name' => 'Newsletter',
+        'id' => 'kulturai_newsletter',
+        'before_widget' => '<div class="newsletter-widget">',
+        'after_widget' => '</div>',
+    ));
+}
 
-// add_action('widgets_init', 'kulturai_widgets');
+add_action('widgets_init', 'kulturai_widgets');
 
 
 // function custom_admin_js($hook) {
