@@ -24,6 +24,17 @@ $(window).resize(() => {
 
 $(document).ready(() => {
 
+  $.fn.modal = function(event) {
+    if(event === 'show') {
+      $(this).addClass('modal--show');
+      $('body').css('overflow', 'hidden');
+    } else {
+      $(this).find('.modal-content').scrollTop(0);
+      $(this).removeClass('modal--show');
+      $('body').css('overflow', 'auto');
+    }
+  }
+
   $.fn.ajaxForm = function(obj) {
     const disableSubmitButton = (bool) =>  $(obj.target).find('input[type=submit]').prop('disabled', bool);
 
@@ -67,23 +78,23 @@ $(document).ready(() => {
   }
 
     $('.contact-menu-action').click(() => {
-      $('#contact-modal').addClass('modal--show')
+      $('#contact-modal').modal('show')
     })
 
     $('.resources-menu-action').click(() => {
-      $('#resource-modal').addClass('modal--show')
+      $('#resource-modal').modal('show')
     })
 
     $('.hamburguer-menu').click(() => {
-        $('.mobile-menu .modal').addClass('modal--show')
+        $('.mobile-menu .modal').modal('show')
     })
 
-    $('.modal-background').click(() => {
-        $('.modal').removeClass('modal--show')
+    $('.modal-background').click((e) => {
+        $(e.target).parents('.modal').modal('hide')
     });
     
     $('.subscription-button').click(() => {
-        $('#subscription-modal').addClass('modal--show')
+        $('#subscription-modal').modal('show')
     })
 
     resizeResourceImage();
@@ -209,10 +220,12 @@ function imageSlider() {
       const slideContent = document.createElement("div");
       slideContent.setAttribute('class', 'slide-content');
       slideContent.style.width = sizePercent + '%';
+      slideItemWidth = 100 / images.length;
 
       images.forEach((sourceImage) => {
         const imageClone = new Image();
         imageClone.src = sourceImage.src;
+        imageClone.style.width = slideItemWidth + '%';
         slideContent.appendChild(imageClone);
         sourceImage.remove();
       });

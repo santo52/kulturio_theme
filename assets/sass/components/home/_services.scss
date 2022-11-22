@@ -1,8 +1,16 @@
 .background-fixed {
-    height: 22.5rem;
+    min-height: 20rem;
     background-attachment: fixed;
     background-position: top center;
-    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 250% auto;
+    @include media(mobile) {
+        background-size: 230% auto;
+    }
+    @include media(laptop) {
+        background-size: cover;
+        background-position: top center;
+    }
  } 
 
 .services {

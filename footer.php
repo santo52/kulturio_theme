@@ -14,26 +14,26 @@
                                 <?php if(get_theme_mod("email_contact")) : ?>
                                     <div class="footer-item">
                                         <span class="icon">
-                                            <img src="<?= get_template_directory_uri(); ?>/assets/images/icons/email.svg" alt="email">
+                                            <img src="<?= get_template_directory_uri(); ?>/assets/images/email.svg" alt="email">
                                         </span>
                                         <a class="footer-item-text" href="mailito:<?=get_theme_mod("email_contact");?>"><?=get_theme_mod("email_contact");?></a>
                                     </div>
                                 <?php endif; ?>
                                 <div class="footer-item">
                                     <span class="icon">
-                                        <img src="<?= get_template_directory_uri(); ?>/assets/images/icons/location.svg" alt="location">
+                                        <img src="<?= get_template_directory_uri(); ?>/assets/images/location.svg" alt="location">
                                     </span>
                                     <span class="footer-item-text">México</span>
                                 </div>
                                 <div class="footer-item">
                                     <span class="icon">
-                                        <img src="<?= get_template_directory_uri(); ?>/assets/images/icons/location.svg" alt="location">
+                                        <img src="<?= get_template_directory_uri(); ?>/assets/images/location.svg" alt="location">
                                     </span>
                                     <span class="footer-item-text">Bogotá</span>
                                 </div>
                                 <div class="footer-item">
                                     <span class="icon">
-                                        <img src="<?= get_template_directory_uri(); ?>/assets/images/icons/location.svg" alt="location">
+                                        <img src="<?= get_template_directory_uri(); ?>/assets/images/location.svg" alt="location">
                                     </span>
                                     <span class="footer-item-text">Miami</span>
                                 </div>
@@ -44,13 +44,13 @@
                             <?php if(get_theme_mod("kulturai_linkedin_link")) : ?>
                                 <div class="icon">
                                     <a href="<?= get_theme_mod("kulturai_linkedin_link"); ?>" target="_blank">
-                                        <img src="<?= get_template_directory_uri(); ?>/assets/images/icons/linkedin.svg" alt="location" />
+                                        <img src="<?= get_template_directory_uri(); ?>/assets/images/linkedin.svg" alt="location" />
                                     </a>
                                 </div>
                             <?php endif; ?>
                         </div>
                         <div class="footer-mobile-bolo">
-                            <img src="<?= get_template_directory_uri(); ?>/assets/images/icons/bolo_rojo.svg" alt="bolo rojo">
+                            <img src="<?= get_template_directory_uri(); ?>/assets/images/bolo_rojo.svg" alt="bolo rojo">
                         </div>
                     </footer>
                 </main>

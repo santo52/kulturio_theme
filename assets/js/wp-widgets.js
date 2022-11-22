@@ -4,11 +4,11 @@
 //     $(id).select2({ 
 //         width: '100%',
 //         templateResult: function (icon) {
-//             var $span = $("<span><img src='" + dir + "/assets/images/icons/"+ icon.id +".svg'/> " + icon.text + "</span>");
+//             var $span = $("<span><img src='" + dir + "/assets/images/"+ icon.id +".svg'/> " + icon.text + "</span>");
 //             return $span;
 //         },
 //         templateSelection: function (icon) {
-//             var $span = $("<span><img src='" + dir + "/assets/images/icons/"+ icon.id +".svg'/> " + icon.text + "</span>");
+//             var $span = $("<span><img src='" + dir + "/assets/images/"+ icon.id +".svg'/> " + icon.text + "</span>");
 //             return $span;
 //         },
 //     })

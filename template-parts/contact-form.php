@@ -2,7 +2,7 @@
 <section class="contact padding-top">
 
     <div class="contact-title">
-        <img src="<?= get_template_directory_uri(); ?>/assets/images/icons/lapiz.svg" alt="icon blog">
+        <img src="<?= get_template_directory_uri(); ?>/assets/images/lapiz.svg" alt="icon blog">
     </div>
 
     <span class="contact-description">

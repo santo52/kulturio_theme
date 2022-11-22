@@ -8,7 +8,7 @@
 
 <?php 
 
-  apply_filters('the_thumbnail', 'fixed'); 
+  apply_filters('the_thumbnail', 'full'); 
   $ceo = get_field('ceo');
 ?>
 
@@ -38,7 +38,7 @@
     <?php if($ceo && $ceo['texto']): ?>
       <div class="about-ceo">
         <?php if($ceo['photo']): ?>
-          <div class="about-ceo-photo" style="background-image: url(<?= $ceo['photo']['sizes']['medium']; ?>)"></div>
+          <div class="about-ceo-photo" style="background-image: url(<?= $ceo['photo']['sizes']['large']; ?>)"></div>
         <?php endif; ?>
         <div class="about-ceo-text">
           <?= $ceo['texto']; ?>

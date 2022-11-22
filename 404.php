@@ -20,7 +20,7 @@
                 <div class="error-text">
                     Existen 404 posibles razones por las cuales esta página no está donde debería estar...
                 </div>
-                <div class="error-text error-padding">
+                <div class="error-text error-paddingr">
                     - Sin problema, dirigete a nuestro sitio web haciendo <a href="/">click aquí</a>
                 </div>
             </div>

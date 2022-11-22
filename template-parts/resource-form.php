@@ -25,7 +25,7 @@
                 <div class="kulturai-form-group">
                     <input required name="company" type="text" placeholder="Compañia" class="kulturai-form-control" />
                 </div>
-                <div class="margin-top">
+                <div class="kulturai-form-space-2">
                     <input type="submit" class="btn btn-red" value="<?= get_theme_mod('kulturai_resources_button_text'); ?>" />
                 </div>
             </form>

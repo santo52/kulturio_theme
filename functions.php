@@ -45,7 +45,10 @@ add_action( 'init', 'kulturai_menus' );
 
 
 function kulturai_enqueue_scripts() {
-    wp_register_script('kulturai_script',get_stylesheet_directory_uri(). '/assets/js/kulturai.js', array('jquery'), '1', true );
+
+    wp_enqueue_style( 'kulturai_styles', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.4', 'all' );
+
+    wp_register_script('kulturai_script',get_stylesheet_directory_uri(). '/assets/js/kulturai.js', array('jquery'), '1.0.4', true );
     wp_enqueue_script('kulturai_script');
 
     wp_localize_script('kulturai_script','kulturai_vars',['ajaxurl'=>admin_url('admin-ajax.php')]);
@@ -99,6 +102,54 @@ function kulturai_widgets() {
 
 add_action('widgets_init', 'kulturai_widgets');
 
+
+function kulturai_the_paginator() {
+
+    global $paged;
+    global $wp_query;
+
+    if (empty($paged)) {
+      $paged = 1;
+    }
+    
+    $max_page = $wp_query->max_num_pages;
+    if(!$max_page) {
+        $max_page = 1;
+    }
+
+    if($max_page == 1) return;
+
+    $baseURI = get_template_directory_uri();
+    $hidePrev = $paged <= 1 ? 'paginator-arrow--hide' : '';
+    $hideNext = $paged >= $max_page ? 'paginator-arrow--hide' : '';
+
+    $prevPage = $paged - 1;
+    $nextPage = $paged + 1;
+
+    $prevPageLink = $paged > 1 ? previous_posts( false ) : 'javascript:void(0);';
+    $nextPageLink = $paged < $max_page ? next_posts( $max_page, false ) : 'javascript:void(0);';
+
+    echo "
+        <div class='paginator'>
+            <div class='paginator-text'>{$paged} - {$max_page} de {$wp_query->found_posts} artículos</div>
+            <div class='paginator-arrow'>
+                <a href='{$prevPageLink}' class='paginator-arrow-left {$hidePrev}'>
+                    <div class='paginator-arrow-icon'>
+                        <img src='{$baseURI}/assets/images/flecha.svg' alt='arrow' />
+                    </div>
+                </a>
+                <a href='{$nextPageLink}' class='paginator-arrow-right {$hideNext}'>
+                    <div class='paginator-arrow-icon'>
+                        <img src='{$baseURI}/assets/images/flecha.svg' alt='arrow' />
+                    </div>
+                </a>
+            </div>
+        </div>
+    ";
+  
+  }
+
+  add_filter( 'the_paginator', 'kulturai_the_paginator' );
 
 // function custom_admin_js($hook) {
 //     echo "<script>localStorage.setItem('template_directory_uri', '" . get_template_directory_uri() . "')</script>";

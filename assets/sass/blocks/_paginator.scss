@@ -1,0 +1,41 @@
+$separation: 2rem;
+
+.paginator {
+   color: $gold;
+   padding: 3rem 0 0;
+   margin: auto;
+   width: max-content;
+   display: flex;
+   
+   @include media(laptop) {
+    margin: initial;
+    margin-left: auto;
+    padding: 3rem 3rem 0 0;
+   }
+
+    &-text {
+        margin-right: $separation;
+    }
+
+    &-arrow {
+        display: flex;
+        &-left {
+            display: flex;
+            transform: rotate(180deg);
+            margin-right: $separation;
+        }
+
+        &-right {
+            display: flex;
+        }
+
+        &-icon {
+            display: flex;
+        }
+
+        &--hide {
+            opacity: .5;
+            cursor: auto;
+        }
+    }
+}

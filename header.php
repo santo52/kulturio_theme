@@ -9,7 +9,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/css/style.css">
     <?php wp_head(); ?>
 </head>
 <body>
@@ -21,7 +20,7 @@
 
         <div id="subscription-modal" class="subscription-modal modal modal--bottom modal--round">
             <div class="modal-background">
-                <img src="<?= get_template_directory_uri(); ?>/assets/images/icons/close.svg" alt="close button">
+                <img src="<?= get_template_directory_uri(); ?>/assets/images/close.svg" alt="close button">
             </div>
             
             <div class="modal-content">
@@ -31,7 +30,7 @@
                 <div class="modal-body">
                     <div class="contact newsletter margin-top">
                         <div class="contact-title">
-                            <img src="<?= get_template_directory_uri(); ?>/assets/images/icons/bombillo.svg" alt="icon blog">
+                            <img src="<?= get_template_directory_uri(); ?>/assets/images/bombillo.svg" alt="icon blog">
                         </div>
 
                         <?php dynamic_sidebar( 'kulturai_newsletter' ); ?>
@@ -65,7 +64,7 @@
 
         <div id="contact-modal" class="contact-modal modal modal--right modal--dark">
             <div class="modal-background">
-                <img src="<?= get_template_directory_uri(); ?>/assets/images/icons/close.svg" alt="close button">
+                <img src="<?= get_template_directory_uri(); ?>/assets/images/close.svg" alt="close button">
             </div>
             
             <div class="modal-content">
@@ -77,7 +76,7 @@
 
         <div id="resource-modal" class="resource-modal modal modal--right modal--dark">
             <div class="modal-background">
-                <img src="<?= get_template_directory_uri(); ?>/assets/images/icons/close.svg" alt="close button">
+                <img src="<?= get_template_directory_uri(); ?>/assets/images/close.svg" alt="close button">
             </div>
             
             <div class="modal-content">

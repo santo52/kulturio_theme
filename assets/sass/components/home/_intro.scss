@@ -18,7 +18,7 @@
       flex-direction: column;
       height: calc(100vh - $items-section-separation - $header-height - 2.5rem);
       justify-content: space-between;
-      padding-bottom: 2rem;
+      padding-bottom: 3rem;
   
       @include media(laptop) {
         flex-basis: 50%;

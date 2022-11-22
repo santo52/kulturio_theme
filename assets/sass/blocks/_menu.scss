@@ -3,7 +3,8 @@
 .mobile-menu .modal-content {
     background-color: $mandy;
     .logo {
-        padding: 0.85rem 1rem;
+        padding: .8rem 1rem;
+        height: 2.5rem;
     }
 }
 
@@ -48,6 +49,7 @@
     margin: auto;
     padding-left: 1.5rem;
     font-weight: 200;
+    margin-top: 0.5rem;
 }
 
 .kulturai-desktop-menu {

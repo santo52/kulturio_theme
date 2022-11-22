@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<?php apply_filters('the_thumbnail', 'fixed'); ?>
+<?php apply_filters('the_thumbnail', 'full'); ?>
 
 
 <?php while(have_posts()): the_post(); ?>

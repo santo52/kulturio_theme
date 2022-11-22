@@ -106,7 +106,7 @@ $iconsService = [
             </span>
         </div>
         <div class="methodology-image slide">
-            <img class="slide-content" src="<?= get_template_directory_uri(); ?>/assets/images/methodology.svg" alt="methodology slide">
+            <img class="slide-content" src="<?= get_template_directory_uri(); ?>/assets/images/metodologia.png" alt="methodology slide">
         </div>
     </section>
     <div class="curve padding-top padding-bottom ">
@@ -122,7 +122,7 @@ $iconsService = [
         </div>
     </section>
     <?php if($backgroundImage): ?>
-        <div class="background-fixed" style="background-image: url(<?= $backgroundImage['sizes']['large'] ?>)"></div>
+        <div class="background-fixed" style="background-image: url(<?= $backgroundImage['url'] ?>)"></div>
     <?php endif; ?>
     <section class="section-block services padding-top">
         <div class="services-title">
@@ -131,7 +131,7 @@ $iconsService = [
         <div class="services-table">
             <?php foreach($services as $key => $item) : ?>
                 <div class="services-table-row">
-                    <img src="<?= get_template_directory_uri(); ?>/assets/images/icons/<?= $iconsService[$key] ?>" alt="icon" />
+                    <img src="<?= get_template_directory_uri(); ?>/assets/images/<?= $iconsService[$key] ?>" alt="icon" />
                     <?= $item; ?>
                 </div>
             <?php endforeach; ?>

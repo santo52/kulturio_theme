@@ -16,7 +16,8 @@
     &-description {
         text-align: center;
         display: block;
-        width: 17rem;
+        width: 100%;
+        max-width: 24rem;
         margin: 0 auto 0;
         padding-top: 1rem;
         font-weight: 300;
