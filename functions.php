@@ -46,9 +46,9 @@ add_action( 'init', 'kulturai_menus' );
 
 function kulturai_enqueue_scripts() {
 
-    wp_enqueue_style( 'kulturai_styles', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.4', 'all' );
+    wp_enqueue_style( 'kulturai_styles', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.12', 'all' );
 
-    wp_register_script('kulturai_script',get_stylesheet_directory_uri(). '/assets/js/kulturai.js', array('jquery'), '1.0.4', true );
+    wp_register_script('kulturai_script',get_stylesheet_directory_uri(). '/assets/js/kulturai.js', array('jquery'), '1.0.12', true );
     wp_enqueue_script('kulturai_script');
 
     wp_localize_script('kulturai_script','kulturai_vars',['ajaxurl'=>admin_url('admin-ajax.php')]);
@@ -119,6 +119,8 @@ function kulturai_the_paginator() {
 
     if($max_page == 1) return;
 
+    $perPage = $wp_query->query_vars['posts_per_page'];
+
     $baseURI = get_template_directory_uri();
     $hidePrev = $paged <= 1 ? 'paginator-arrow--hide' : '';
     $hideNext = $paged >= $max_page ? 'paginator-arrow--hide' : '';
@@ -129,9 +131,15 @@ function kulturai_the_paginator() {
     $prevPageLink = $paged > 1 ? previous_posts( false ) : 'javascript:void(0);';
     $nextPageLink = $paged < $max_page ? next_posts( $max_page, false ) : 'javascript:void(0);';
 
+    $from = (($paged - 1) * $perPage) + 1;
+    $to = $paged * $perPage;
+    if($wp_query->post_count < $perPage) {
+        $to -= ($perPage * 2) - $wp_query->found_posts;
+    }
+
     echo "
         <div class='paginator'>
-            <div class='paginator-text'>{$paged} - {$max_page} de {$wp_query->found_posts} artículos</div>
+            <div class='paginator-text'>{$from} - {$to} de {$wp_query->found_posts} artículos</div>
             <div class='paginator-arrow'>
                 <a href='{$prevPageLink}' class='paginator-arrow-left {$hidePrev}'>
                     <div class='paginator-arrow-icon'>
@@ -151,13 +159,18 @@ function kulturai_the_paginator() {
 
   add_filter( 'the_paginator', 'kulturai_the_paginator' );
 
-// function custom_admin_js($hook) {
-//     echo "<script>localStorage.setItem('template_directory_uri', '" . get_template_directory_uri() . "')</script>";
-//     if($hook === 'widgets.php') {
-//         $url = get_template_directory_uri() . '/assets/js/wp-widgets.js';
-//         wp_enqueue_script('handle', $url);
-//     }
-// }
-// add_action('admin_enqueue_scripts', 'custom_admin_js');
+/* Menús de administración que SÍ se ven - El resto desaparecen */
+
+function ayudawp_admin_init() {  
+    $menus_to_remove = array(
+        'edit-comments.php', // coments
+        'edit.php?post_type=acf-field-group', //Custom Fields
+    );      
+
+    foreach ($GLOBALS['menu'] as $key => $value) {   
+        if (in_array($value[2], $menus_to_remove)) remove_menu_page($value[2]);
+    }   
+}
+add_action('admin_init', 'ayudawp_admin_init');
 
 ?>

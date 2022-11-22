@@ -4,6 +4,9 @@
         @include media(laptop) {
             width: 100% !important;
             display: block;
+            img {
+                width: 100% !important;
+            }
         }
     }
 }

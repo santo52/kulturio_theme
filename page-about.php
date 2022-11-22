@@ -30,8 +30,15 @@
   </section>
 
   <div class="about-arrow">
-    <img src="<?= get_template_directory_uri() ?>/assets/images/flecha_abajo.svg" alt="CEO arrow" />
-    <!-- <span>Nuestro CEO</span> -->
+    <svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 0 41.997 219.03">
+      <g transform="translate(-195.646 -1106)">
+        <g fill="none" stroke="#fff" stroke-width="1" transform="translate(1747 823.326) rotate(90)">
+          <path d="M564.674,1747h208" transform="translate(-282 -206.644)" />
+          <path d="M656.954,1737.531l10.322,10.322-10.322,10.322" transform="translate(-166.279 -207.175)" />
+        </g>
+        <text transform="translate(220.644 1215) rotate(90)" font-size="16" fill="#66c2a5" font-family="RobotoMono-ExtraLight, Roboto Mono" font-weight="200"><tspan x="-52.809" y="0">Nuestro CEO</tspan></text>
+      </g>
+    </svg>
   </div>
 
   <section class="about-content about-divided">

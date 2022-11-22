@@ -2,6 +2,7 @@
     padding: 3rem;
     max-width: 70rem;
     margin: auto;
+    position: relative;
     &-title {
         color: $mandy;
         margin-bottom: 2rem;
@@ -9,6 +10,40 @@
 
     &-author {
         font-weight: bold;
+    }
+
+    &-related {
+        margin-top: 1rem;
+    
+        &-title {
+            color: $gold;
+            display: block;
+        }
+    
+        &-container {
+            display: flex;
+            width: 350%;
+            @include media(desktop) {
+                width: 125%;
+            }
+
+            @include media(biggest) {
+                width: 100%;
+            }
+        }
+    
+        &-card {
+            margin-left: 1rem;
+            height: 11rem;
+            
+            &.blog-card {
+                max-width: 25%;
+            }
+    
+            &:first-child {
+                margin-left: 0;
+            }
+        }
     }
 
     @include media(desktop) {
