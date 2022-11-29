@@ -41,7 +41,7 @@
     &-image {
         display: flex;
         justify-content: center;
-        max-width: 20rem;
+        max-width: 15rem;
         margin: auto;
         @include media(laptop) {
             margin: initial;

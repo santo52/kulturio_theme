@@ -13,9 +13,6 @@
 <?php get_header(); ?>
 
 <div class="subscribed">
-  <div class="subscribed-logo">
-      <?php apply_filters('the_logo', 'desktop'); ?>
-  </div>
   <div class="subscribed-main">
     <?php while(have_posts()): the_post(); ?>
       <section class="subscribed-container">
@@ -30,5 +27,11 @@
     <?php endwhile; ?>
   </div>
 </div>
+
+<style>
+  .subscription-button {
+    display: none !important;
+  }
+</style>
 
 <?php get_footer(); ?>

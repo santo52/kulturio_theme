@@ -30,13 +30,13 @@
   </section>
 
   <div class="about-arrow">
-    <svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 0 41.997 219.03">
-      <g transform="translate(-195.646 -1106)">
-        <g fill="none" stroke="#fff" stroke-width="1" transform="translate(1747 823.326) rotate(90)">
-          <path d="M564.674,1747h208" transform="translate(-282 -206.644)" />
-          <path d="M656.954,1737.531l10.322,10.322-10.322,10.322" transform="translate(-166.279 -207.175)" />
+    <svg xmlns="http://www.w3.org/2000/svg" width="41.997" height="219.03" viewBox="0 0 41.997 219.03">
+      <g id="Grupo_119" data-name="Grupo 119" transform="translate(-195.646 -1106)">
+        <g id="Grupo_71" data-name="Grupo 71" transform="translate(1747 823.326) rotate(90)">
+          <path id="Trazado_165" data-name="Trazado 165" d="M564.674,1747h208" transform="translate(-282 -206.644)" fill="none" stroke="#fff" stroke-width="1"/>
+          <path id="Trazado_166" data-name="Trazado 166" d="M656.954,1737.531l10.322,10.322-10.322,10.322" transform="translate(-166.279 -207.175)" fill="none" stroke="#fff" stroke-width="1"/>
         </g>
-        <text transform="translate(220.644 1215) rotate(90)" font-size="16" fill="#66c2a5" font-family="RobotoMono-ExtraLight, Roboto Mono" font-weight="200"><tspan x="-52.809" y="0">Nuestro CEO</tspan></text>
+        <text id="Nuestro_CEO" data-name="Nuestro CEO" transform="translate(220.644 1215) rotate(90)" fill="#66c2a5" font-size="16" font-family="Open Sans"><tspan x="-47.973" y="0">Nuestro CEO</tspan></text>
       </g>
     </svg>
   </div>

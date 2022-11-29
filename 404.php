@@ -8,7 +8,7 @@
         <?php wp_head(); ?>
     </head>
     <body>
-        <div class="subscribed-logo">
+        <div class="subscribed-logo" style="margin-top: 1.5rem;margin-right: 1.5rem;">
             <?php apply_filters('the_logo', 'desktop'); ?>
         </div>
         <div class="error">
@@ -21,11 +21,11 @@
                     Existen 404 posibles razones por las cuales esta página no está donde debería estar...
                 </div>
                 <div class="error-text error-paddingr">
-                    - Sin problema, dirigete a nuestro sitio web haciendo <a href="/">click aquí</a>
+                    ... Sin problema, dirigete a nuestro sitio web haciendo <a href="/">click aquí</a>
                 </div>
             </div>
             <div class="error-image">
-                <img src="<?= get_template_directory_uri() ?>/assets/images/triste.svg" alt="error bolo">
+                <img src="<?= get_template_directory_uri() ?>/assets/images/404.svg" alt="error bolo">
             </div>
         </div>
         <?php wp_footer(); ?>
